@@ -1,0 +1,28 @@
+{
+    "cosFi": 0.1,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/spec\/",
+        "mediaType": "application\/json"
+    },
+    "mi": 0.1,
+    "lambda": {
+        "max": 0.1,
+        "min": 0.1
+    },
+    "power": {
+        "active": 0.1,
+        "installed": 0.1,
+        "rated": 0.1,
+        "reactive": 0.1
+    },
+    "reactance": {
+        "longitudinal": 0.1,
+        "transverse": 0.1
+    },
+    "voltage": {
+        "level": 0.1,
+        "phase": 0.1,
+        "rated": 0.1,
+        "value": 0.1
+    }
+}

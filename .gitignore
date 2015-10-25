@@ -1,0 +1,8 @@
+!.gitignore
+!.htaccess
+.*
+*~
+/log/*
+/log
+/app/cache
+/app/cache/*

@@ -1,0 +1,16 @@
+{
+    "load": {
+        "active": 0.1,
+        "reactive": 0.1
+    },
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/calc\/",
+        "mediaType": "application\/json"
+    },
+    "voltage": {
+        "dropKv": 0.1,
+        "dropProc": 0.1,
+        "phase": 0.1,
+        "value": 0.1
+    }
+}

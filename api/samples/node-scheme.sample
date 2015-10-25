@@ -1,0 +1,10 @@
+{
+    "description": "some description of the scheme",
+    "id": 44,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/scheme\/",
+        "mediaType": "application\/json"
+    },
+    "name": "some scheme name",
+    "version": 1
+}

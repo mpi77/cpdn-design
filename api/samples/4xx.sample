@@ -1,0 +1,7 @@
+{
+    "status": 400,
+    "code": 41234,
+    "usrMessage": "user message",
+    "devMessage": "some descriptive msg for developer",
+    "moreInfo": "uri"
+}
