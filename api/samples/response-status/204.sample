@@ -1,0 +1,10 @@
+{
+    "code": 2004,
+    "devMessage": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
+        "mediaType": "application\/json"
+    },
+    "status": 204,
+    "usrMessage": "Resource has not content."
+}

@@ -1,0 +1,10 @@
+{
+    "code": 4000,
+    "devMessage": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
+        "mediaType": "application\/json"
+    },
+    "status": 400,
+    "usrMessage": "Bad request to get requested resource."
+}

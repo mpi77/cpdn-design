@@ -1,0 +1,10 @@
+{
+    "code": 4001,
+    "devMessage": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
+        "mediaType": "application\/json"
+    },
+    "status": 401,
+    "usrMessage": "Unauthorized access to resource."
+}

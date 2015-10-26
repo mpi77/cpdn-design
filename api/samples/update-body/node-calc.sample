@@ -1,0 +1,12 @@
+{
+    "load": {
+        "active": 0.1,
+        "reactive": 0.1
+    },
+    "voltage": {
+        "dropKv": 0.1,
+        "dropProc": 0.1,
+        "phase": 0.1,
+        "value": 0.1
+    }
+}

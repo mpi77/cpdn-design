@@ -1,0 +1,10 @@
+{
+    "code": 4010,
+    "devMessage": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
+        "mediaType": "application\/json"
+    },
+    "status": 410,
+    "usrMessage": "Resource is no longer available."
+}

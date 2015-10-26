@@ -8,7 +8,7 @@ protocols: [ HTTPS ]
 
 resourceTypes:
   - collection:
-      description: Collection of <<resourcePathName>>.
+      description: Read/update collection of <<resourcePathName>>.
       get:
         description: Get a list of <<resourcePathName>>.
         responses:
@@ -19,91 +19,93 @@ resourceTypes:
           204:
             body:
               application/json:
-                example: !include samples/status/204.sample
+                example: !include samples/response-status/204.sample
           400:
             body:
               application/json:
-                example: !include samples/status/400.sample
+                example: !include samples/response-status/400.sample
           401:
             body:
               application/json:
-                example: !include samples/status/401.sample
+                example: !include samples/response-status/401.sample
           403:
             body:
               application/json:
-                example: !include samples/status/403.sample
+                example: !include samples/response-status/403.sample
           404:
             body:
               application/json:
-                example: !include samples/status/404.sample
+                example: !include samples/response-status/404.sample
           405:
             body:
               application/json:
-                example: !include samples/status/405.sample
+                example: !include samples/response-status/405.sample
           409:
             body:
               application/json:
-                example: !include samples/status/409.sample
+                example: !include samples/response-status/409.sample
           410:
             body:
               application/json:
-                example: !include samples/status/410.sample
+                example: !include samples/response-status/410.sample
           500:
             body:
               application/json:
-                example: !include samples/status/500.sample
+                example: !include samples/response-status/500.sample
           503:
             body:
               application/json:
-                example: !include samples/status/503.sample
+                example: !include samples/response-status/503.sample
       post:
         description: | 
           Add a new <<resourcePathName>>.
         body:
           application/json:
+            example: |
+              {}
         responses:
           201:
             body:
               application/json:
-                example: !include samples/status/201.sample
+                example: !include samples/response-status/201.sample
           400:
             body:
               application/json:
-                example: !include samples/status/400.sample
+                example: !include samples/response-status/400.sample
           401:
             body:
               application/json:
-                example: !include samples/status/401.sample
+                example: !include samples/response-status/401.sample
           403:
             body:
               application/json:
-                example: !include samples/status/403.sample
+                example: !include samples/response-status/403.sample
           404:
             body:
               application/json:
-                example: !include samples/status/404.sample
+                example: !include samples/response-status/404.sample
           405:
             body:
               application/json:
-                example: !include samples/status/405.sample
+                example: !include samples/response-status/405.sample
           409:
             body:
               application/json:
-                example: !include samples/status/409.sample
+                example: !include samples/response-status/409.sample
           410:
             body:
               application/json:
-                example: !include samples/status/410.sample
+                example: !include samples/response-status/410.sample
           500:
             body:
               application/json:
-                example: !include samples/status/500.sample
+                example: !include samples/response-status/500.sample
           503:
             body:
               application/json:
-                example: !include samples/status/503.sample
-  - collection-item:
-      description: Entity representing a <<resourcePathName|!singularize>>
+                example: !include samples/response-status/503.sample
+  - collection-item-read:
+      description: Read only entity representing a <<resourcePathName|!singularize>>
       get:
         description: |
           Get the collection item of <<resourcePathName|!singularize>>
@@ -111,95 +113,249 @@ resourceTypes:
           200:
             body:
               application/json:
-                example: <<exampleItem>>
+                example: <<exampleReadItem>>
           204:
             body:
               application/json:
-                example: !include samples/status/204.sample
+                example: !include samples/response-status/204.sample
           400:
             body:
               application/json:
-                example: !include samples/status/400.sample
+                example: !include samples/response-status/400.sample
           401:
             body:
               application/json:
-                example: !include samples/status/401.sample
+                example: !include samples/response-status/401.sample
           403:
             body:
               application/json:
-                example: !include samples/status/403.sample
+                example: !include samples/response-status/403.sample
           404:
             body:
               application/json:
-                example: !include samples/status/404.sample
+                example: !include samples/response-status/404.sample
           405:
             body:
               application/json:
-                example: !include samples/status/405.sample
+                example: !include samples/response-status/405.sample
           409:
             body:
               application/json:
-                example: !include samples/status/409.sample
+                example: !include samples/response-status/409.sample
           410:
             body:
               application/json:
-                example: !include samples/status/410.sample
+                example: !include samples/response-status/410.sample
           500:
             body:
               application/json:
-                example: !include samples/status/500.sample
+                example: !include samples/response-status/500.sample
           503:
             body:
               application/json:
-                example: !include samples/status/503.sample
-      post:
+                example: !include samples/response-status/503.sample
+  - collection-item-read-update:
+      description: Read/update entity representing a <<resourcePathName|!singularize>>
+      get:
         description: |
-          Update the collection item of <<resourcePathName|!singularize>>
+          Get the collection item of <<resourcePathName|!singularize>>
         responses:
           200:
             body:
               application/json:
-                example: !include samples/status/200.sample
-          304:
+                example: <<exampleReadItem>>
+          204:
             body:
               application/json:
-                example: !include samples/status/304.sample
+                example: !include samples/response-status/204.sample
           400:
             body:
               application/json:
-                example: !include samples/status/400.sample
+                example: !include samples/response-status/400.sample
           401:
             body:
               application/json:
-                example: !include samples/status/401.sample
+                example: !include samples/response-status/401.sample
           403:
             body:
               application/json:
-                example: !include samples/status/403.sample
+                example: !include samples/response-status/403.sample
           404:
             body:
               application/json:
-                example: !include samples/status/404.sample
+                example: !include samples/response-status/404.sample
           405:
             body:
               application/json:
-                example: !include samples/status/405.sample
+                example: !include samples/response-status/405.sample
           409:
             body:
               application/json:
-                example: !include samples/status/409.sample
+                example: !include samples/response-status/409.sample
           410:
             body:
               application/json:
-                example: !include samples/status/410.sample
+                example: !include samples/response-status/410.sample
           500:
             body:
               application/json:
-                example: !include samples/status/500.sample
+                example: !include samples/response-status/500.sample
           503:
             body:
               application/json:
-                example: !include samples/status/503.sample
+                example: !include samples/response-status/503.sample
+      post:
+        description: |
+          Update the collection item of <<resourcePathName|!singularize>>
+        body:
+          application/json:
+            example: <<exampleUpdateItem>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include samples/response-status/200.sample
+          304:
+            body:
+              application/json:
+                example: !include samples/response-status/304.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/response-status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/response-status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/response-status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/response-status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/response-status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/response-status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/response-status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/response-status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/response-status/503.sample
+  - collection-item-read-update-delete:
+      description: Read/update/delete entity representing a <<resourcePathName|!singularize>>
+      get:
+        description: |
+          Get the collection item of <<resourcePathName|!singularize>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: <<exampleReadItem>>
+          204:
+            body:
+              application/json:
+                example: !include samples/response-status/204.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/response-status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/response-status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/response-status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/response-status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/response-status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/response-status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/response-status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/response-status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/response-status/503.sample
+      post:
+        description: |
+          Update the collection item of <<resourcePathName|!singularize>>
+        body:
+          application/json:
+            example: <<exampleUpdateItem>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include samples/response-status/200.sample
+          304:
+            body:
+              application/json:
+                example: !include samples/response-status/304.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/response-status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/response-status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/response-status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/response-status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/response-status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/response-status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/response-status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/response-status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/response-status/503.sample
       delete:
         description: |
           Delete the collection item of <<resourcePathName|!singularize>>
@@ -207,43 +363,43 @@ resourceTypes:
           200:
             body:
               application/json:
-                example: !include samples/status/200.sample
+                example: !include samples/response-status/200.sample
           400:
             body:
               application/json:
-                example: !include samples/status/400.sample
+                example: !include samples/response-status/400.sample
           401:
             body:
               application/json:
-                example: !include samples/status/401.sample
+                example: !include samples/response-status/401.sample
           403:
             body:
               application/json:
-                example: !include samples/status/403.sample
+                example: !include samples/response-status/403.sample
           404:
             body:
               application/json:
-                example: !include samples/status/404.sample
+                example: !include samples/response-status/404.sample
           405:
             body:
               application/json:
-                example: !include samples/status/405.sample
+                example: !include samples/response-status/405.sample
           409:
             body:
               application/json:
-                example: !include samples/status/409.sample
+                example: !include samples/response-status/409.sample
           410:
             body:
               application/json:
-                example: !include samples/status/410.sample
+                example: !include samples/response-status/410.sample
           500:
             body:
               application/json:
-                example: !include samples/status/500.sample
+                example: !include samples/response-status/500.sample
           503:
             body:
               application/json:
-                example: !include samples/status/503.sample
+                example: !include samples/response-status/503.sample
 
 /schemes:
   description: Scheme root resource
@@ -262,27 +418,30 @@ resourceTypes:
   description: Node root resource
   type:
     collection:
-      exampleCollection: !include samples/nodes.sample
+      exampleCollection: !include samples/response-body/nodes.sample
   /{node_id}:
     type:
-        collection-item:
-          exampleItem: !include samples/node.sample
+        collection-item-read-update-delete:
+          exampleReadItem: !include samples/response-body/node.sample
+          exampleUpdateItem: !include samples/update-body/node.sample
     /calc:
       type:
-        collection-item:
-          exampleItem: !include samples/node-calc.sample
+        collection-item-read-update:
+          exampleReadItem: !include samples/response-body/node-calc.sample
+          exampleUpdateItem: !include samples/update-body/node-calc.sample
     /mapPoint:
       type:
-        collection-item:
-          exampleItem: !include samples/node-mapPoint.sample
+        collection-item-read:
+          exampleReadItem: !include samples/response-body/node-mapPoint.sample
     /scheme:
       type:
-        collection-item:
-          exampleItem: !include samples/node-scheme.sample
+        collection-item-read:
+          exampleReadItem: !include samples/response-body/node-scheme.sample
     /spec:
       type:
-        collection-item:
-          exampleItem: !include samples/node-spec.sample
+        collection-item-read-update:
+          exampleReadItem: !include samples/response-body/node-spec.sample
+          exampleUpdateItem: !include samples/update-body/node-spec.sample
 
 /sections:
   description: Section root resource

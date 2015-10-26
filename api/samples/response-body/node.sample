@@ -17,34 +17,20 @@
     },
     "id": 22,
     "mapPoint": {
-        "gps": {
-            "altitude": 0.1,
-            "latitude": 0.1,
-            "longitude": 0.1
-        },
-        "id": 11,
         "meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/mapPoint\/",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
             "mediaType": "application\/json"
-        },
-        "node": 1,
-        "schema": 1,
-        "x": 100,
-        "y": 100
+        }
     },
     "meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
         "mediaType": "application\/json"
     },
     "scheme": {
-        "description": "some description of the scheme",
-        "id": 44,
         "meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/scheme\/",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
             "mediaType": "application\/json"
-        },
-        "name": "some scheme name",
-        "version": 1
+        }
     },
     "spec": {
         "cosFi": 0.1,

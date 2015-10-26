@@ -18,26 +18,21 @@
         },
         "id": 22,
         "mapPoint": {
-            "gps": {
-                "altitude": 0.1,
-                "latitude": 0.1,
-                "longitude": 0.1
-            },
-            "id": 11,
             "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/mapPoint\/",
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
                 "mediaType": "application\/json"
-            },
-            "node": 1,
-            "schema": 1,
-            "x": 100,
-            "y": 100
+            }
         },
         "meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
             "mediaType": "application\/json"
         },
-        "scheme": "$SCHEME",
+        "scheme": {
+            "meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+                "mediaType": "application\/json"
+            }
+        },
         "spec": {
             "cosFi": 0.1,
             "meta": {
@@ -86,26 +81,21 @@
         },
         "id": 22,
         "mapPoint": {
-            "gps": {
-                "altitude": 0.1,
-                "latitude": 0.1,
-                "longitude": 0.1
-            },
-            "id": 11,
             "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/mapPoint\/",
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
                 "mediaType": "application\/json"
-            },
-            "node": 1,
-            "schema": 1,
-            "x": 100,
-            "y": 100
+            }
         },
         "meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
             "mediaType": "application\/json"
         },
-        "scheme": "$SCHEME",
+        "scheme": {
+            "meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+                "mediaType": "application\/json"
+            }
+        },
         "spec": {
             "cosFi": 0.1,
             "meta": {

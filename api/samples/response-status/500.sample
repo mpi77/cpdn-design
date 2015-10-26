@@ -1,0 +1,10 @@
+{
+    "code": 5000,
+    "devMessage": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
+        "mediaType": "application\/json"
+    },
+    "status": 500,
+    "usrMessage": "Internal server error."
+}

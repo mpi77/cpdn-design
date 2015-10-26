@@ -1,0 +1,10 @@
+{
+    "code": 2001,
+    "devMessage": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
+        "mediaType": "application\/json"
+    },
+    "status": 201,
+    "usrMessage": "Resource created."
+}
