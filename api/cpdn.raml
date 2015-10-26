@@ -7,16 +7,6 @@ protocols: [ HTTPS ]
 
 
 resourceTypes:
-  - readOnlyCollection:
-      description: ReadOnly collection of <<resourcePathName>>.
-      get:
-        description: Get a list of <<resourcePathName>>.
-        responses:
-          200:
-            body:
-              application/json:
-                example: |
-                  <<exampleCollection>>
   - collection:
       description: Collection of <<resourcePathName>>.
       get:
@@ -25,19 +15,93 @@ resourceTypes:
           200:
             body:
               application/json:
-                example: |
-                  <<exampleCollection>>
+                example: <<exampleCollection>>
+          204:
+            body:
+              application/json:
+                example: !include samples/status/204.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/status/503.sample
       post:
         description: | 
-          Add a new <<resourcePathName|!singularize>>.
+          Add a new <<resourcePathName>>.
         body:
           application/json:
         responses:
-          200:
+          201:
             body:
               application/json:
-                example: |
-                  { "message": "The <<resourcePathName|!singularize>> has been properly entered" }
+                example: !include samples/status/201.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/status/503.sample
   - collection-item:
       description: Entity representing a <<resourcePathName|!singularize>>
       get:
@@ -48,10 +112,138 @@ resourceTypes:
             body:
               application/json:
                 example: <<exampleItem>>
+          204:
+            body:
+              application/json:
+                example: !include samples/status/204.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/status/403.sample
           404:
             body:
               application/json:
-                example: !include samples/4xx.sample
+                example: !include samples/status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/status/503.sample
+      post:
+        description: |
+          Update the collection item of <<resourcePathName|!singularize>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include samples/status/200.sample
+          304:
+            body:
+              application/json:
+                example: !include samples/status/304.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/status/503.sample
+      delete:
+        description: |
+          Delete the collection item of <<resourcePathName|!singularize>>
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include samples/status/200.sample
+          400:
+            body:
+              application/json:
+                example: !include samples/status/400.sample
+          401:
+            body:
+              application/json:
+                example: !include samples/status/401.sample
+          403:
+            body:
+              application/json:
+                example: !include samples/status/403.sample
+          404:
+            body:
+              application/json:
+                example: !include samples/status/404.sample
+          405:
+            body:
+              application/json:
+                example: !include samples/status/405.sample
+          409:
+            body:
+              application/json:
+                example: !include samples/status/409.sample
+          410:
+            body:
+              application/json:
+                example: !include samples/status/410.sample
+          500:
+            body:
+              application/json:
+                example: !include samples/status/500.sample
+          503:
+            body:
+              application/json:
+                example: !include samples/status/503.sample
 
 /schemes:
   description: Scheme root resource
@@ -94,23 +286,26 @@ resourceTypes:
 
 /sections:
   description: Section root resource
-  get:
   /{section_id}:
     /calc:
     /nodes:
+    /paths:
+    /scheme:
     /spec:
 
 /mapPoints:
   description: MapPoint root resource
-  get:
   /{mapPoint_id}:
     /node:
     /paths:
       /src:
       /dst:
+    /scheme:
 
 /paths:
   description: Path root resource
-  get:
   /{path_id}:
     /section:
+
+/permissions:
+  description: Schema permissions root resource
