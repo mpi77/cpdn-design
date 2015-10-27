@@ -1,0 +1,48 @@
+description: Read only entity representing a <<resourcePathName|!singularize>>
+get:
+  description: Get the collection item of <<resourcePathName|!singularize>>
+  responses:
+    200:
+      body:
+        application/json:
+          example: <<exampleReadItem>>
+    204:
+      body:
+        application/json:
+          example: !include ../samples/response-status/204.sample
+    400:
+      body:
+        application/json:
+          example: !include ../samples/response-status/400.sample
+    401:
+      body:
+        application/json:
+          example: !include ../samples/response-status/401.sample
+    403:
+      body:
+        application/json:
+          example: !include ../samples/response-status/403.sample
+    404:
+      body:
+        application/json:
+          example: !include ../samples/response-status/404.sample
+    405:
+      body:
+        application/json:
+          example: !include ../samples/response-status/405.sample
+    409:
+      body:
+        application/json:
+          example: !include ../samples/response-status/409.sample
+    410:
+      body:
+        application/json:
+          example: !include ../samples/response-status/410.sample
+    500:
+      body:
+        application/json:
+          example: !include ../samples/response-status/500.sample
+    503:
+      body:
+        application/json:
+          example: !include ../samples/response-status/503.sample
