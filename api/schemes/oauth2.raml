@@ -14,16 +14,57 @@ describedBy:
         the "Authorization" header
       type: string
   responses:
+    400:
+      description: Bad OAuth request.
+      body:
+        application/json:
+          example: !include ../samples/response-status/400.sample
     401:
       description: |
         Bad or expired token. This can happen if the user or Dropbox
         revoked or expired an access token. To fix, you should re-
         authenticate the user.
+      body:
+        application/json:
+          example: !include ../samples/response-status/401.sample
     403:
       description: |
         Bad OAuth request (wrong consumer key, bad nonce, expired
         timestamp...). Unfortunately, re-authenticating the user won't help here.
+      body:
+        application/json:
+          example: !include ../samples/response-status/403.sample
+    404:
+      description: OAuth resurce not found.
+      body:
+        application/json:
+          example: !include ../samples/response-status/404.sample
+    405:
+      description: Method of OAuth request is not allowed.
+      body:
+        application/json:
+          example: !include ../samples/response-status/405.sample
+    409:
+      description: Conflict in request.
+      body:
+        application/json:
+          example: !include ../samples/response-status/409.sample
+    410:
+      description: OAuth resource is not available.
+      body:
+        application/json:
+          example: !include ../samples/response-status/410.sample
+    500:
+      description: Internal server error.
+      body:
+        application/json:
+          example: !include ../samples/response-status/500.sample
+    503:
+      description: Service is unavailable.
+      body:
+        application/json:
+          example: !include ../samples/response-status/503.sample
 settings:
-  authorizationUri: https://oauth.cpdn.sd2.cz/authorize
-  accessTokenUri: https://oauth.cpdn.sd2.cz/token
+  authorizationUri: https://console.cpdn.sd2.cz/authorize
+  accessTokenUri: https://console.cpdn.sd2.cz/oauth/token
   authorizationGrants: [ code, token ]
