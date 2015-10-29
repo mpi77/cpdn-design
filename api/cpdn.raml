@@ -15,6 +15,9 @@ resourceTypes:
   - collection-item-read-update: !include types/collection-item-read-update.raml
   - collection-item-read-update-delete: !include types/collection-item-read-update-delete.raml
 
+traits:
+  - paged: !include traits/paged.raml
+
 /schemes:
   description: Scheme root resource
   /{scheme_id}:
@@ -23,9 +26,10 @@ resourceTypes:
     /requests:
     /mapPoints:
     /permissions:
-
+ 
 /nodes:
   description: Node root resource
+  is: [ paged ]
   type:
     collection:
       exampleCollection: !include samples/read-body/nodes.sample
