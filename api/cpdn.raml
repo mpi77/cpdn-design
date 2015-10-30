@@ -32,31 +32,31 @@ traits:
   is: [ paged ]
   type:
     collection:
-      exampleCollection: !include samples/read-body/nodes.sample
-      exampleCreateItem: !include samples/create-body/node.sample
+      exampleCollection: !include samples/read-body/nodes.json
+      exampleCreateItem: !include samples/create-body/node.json
   /{node_id}:
     type:
         collection-item-read-update-delete:
-          exampleReadItem: !include samples/read-body/node.sample
-          exampleUpdateItem: !include samples/update-body/node.sample
+          exampleReadItem: !include samples/read-body/node.json
+          exampleUpdateItem: !include samples/update-body/node.json
     /calc:
       type:
         collection-item-read-update:
-          exampleReadItem: !include samples/read-body/node-calc.sample
-          exampleUpdateItem: !include samples/update-body/node-calc.sample
+          exampleReadItem: !include samples/read-body/node-calc.json
+          exampleUpdateItem: !include samples/update-body/node-calc.json
     /mapPoint:
       type:
         collection-item-read:
-          exampleReadItem: !include samples/read-body/node-mapPoint.sample
+          exampleReadItem: !include samples/read-body/node-mapPoint.json
     /scheme:
       type:
         collection-item-read:
-          exampleReadItem: !include samples/read-body/node-scheme.sample
+          exampleReadItem: !include samples/read-body/node-scheme.json
     /spec:
       type:
         collection-item-read-update:
-          exampleReadItem: !include samples/read-body/node-spec.sample
-          exampleUpdateItem: !include samples/update-body/node-spec.sample
+          exampleReadItem: !include samples/read-body/node-spec.json
+          exampleUpdateItem: !include samples/update-body/node-spec.json
 
 /sections:
   description: Section root resource

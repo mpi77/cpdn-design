@@ -1,0 +1,32 @@
+{
+    "current": {
+        "dst": {
+            "phase": 0.1,
+            "ratio": 0.1,
+            "value": 0.1
+        },
+        "src": {
+            "phase": 0.1,
+            "ratio": 0.1,
+            "value": 0.1
+        }
+    },
+    "losses": {
+        "active": 0.1,
+        "reactive": 0.1
+    },
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
+        "mediaType": "application\/json"
+    },
+    "power": {
+        "dst": {
+            "active": 0.1,
+            "reactive": 0.1
+        },
+        "src": {
+            "active": 0.1,
+            "reactive": 0.1
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "dst": {
+        "meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+            "mediaType": "application\/json"
+        }
+    },
+    "src": {
+        "meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+            "mediaType": "application\/json"
+        }
+    },
+    "trc": null,
+    "meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/nodes\/",
+        "mediaType": "application\/json"
+    }
+}
