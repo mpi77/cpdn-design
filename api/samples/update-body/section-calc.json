@@ -1,0 +1,28 @@
+{
+    "current": {
+        "dst": {
+            "phase": 0.1,
+            "ratio": 0.1,
+            "value": 0.1
+        },
+        "src": {
+            "phase": 0.1,
+            "ratio": 0.1,
+            "value": 0.1
+        }
+    },
+    "losses": {
+        "active": 0.1,
+        "reactive": 0.1
+    },
+    "power": {
+        "dst": {
+            "active": 0.1,
+            "reactive": 0.1
+        },
+        "src": {
+            "active": 0.1,
+            "reactive": 0.1
+        }
+    }
+}

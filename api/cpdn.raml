@@ -61,12 +61,38 @@ traits:
 
 /sections:
   description: Section root resource
+  is: [ paged, searchable ]
+  type:
+    collection:
+      exampleCollection: !include samples/read-body/sections.json
+      exampleCreateItem: !include samples/create-body/section.json
   /{section_id}:
+    type:
+        collection-item-read-update-delete:
+          exampleReadItem: !include samples/read-body/section.json
+          exampleUpdateItem: !include samples/update-body/section.json
     /calc:
+      type:
+        collection-item-read-update:
+          exampleReadItem: !include samples/read-body/section-calc.json
+          exampleUpdateItem: !include samples/update-body/section-calc.json
     /nodes:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/section-paths.json
     /paths:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/section-paths.json
     /scheme:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/section-scheme.json
     /spec:
+      type:
+        collection-item-read-update:
+          exampleReadItem: !include samples/read-body/section-spec.json
+          exampleUpdateItem: !include samples/update-body/section-spec.json
 
 /mapPoints:
   description: MapPoint root resource
