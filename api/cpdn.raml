@@ -17,6 +17,7 @@ resourceTypes:
 
 traits:
   - paged: !include traits/paged.raml
+  - searchable: !include traits/searchable.raml
 
 /schemes:
   description: Scheme root resource
@@ -29,7 +30,7 @@ traits:
  
 /nodes:
   description: Node root resource
-  is: [ paged ]
+  is: [ paged, searchable ]
   type:
     collection:
       exampleCollection: !include samples/read-body/nodes.json
