@@ -18,7 +18,7 @@ describedBy:
       description: Bad OAuth request.
       body:
         application/json:
-          example: !include ../samples/response-status/400.sample
+          example: !include ../samples/response-status/400.json
     401:
       description: |
         Bad or expired token. This can happen if the user or Dropbox
@@ -26,44 +26,44 @@ describedBy:
         authenticate the user.
       body:
         application/json:
-          example: !include ../samples/response-status/401.sample
+          example: !include ../samples/response-status/401.json
     403:
       description: |
         Bad OAuth request (wrong consumer key, bad nonce, expired
         timestamp...). Unfortunately, re-authenticating the user won't help here.
       body:
         application/json:
-          example: !include ../samples/response-status/403.sample
+          example: !include ../samples/response-status/403.json
     404:
       description: OAuth resurce not found.
       body:
         application/json:
-          example: !include ../samples/response-status/404.sample
+          example: !include ../samples/response-status/404.json
     405:
       description: Method of OAuth request is not allowed.
       body:
         application/json:
-          example: !include ../samples/response-status/405.sample
+          example: !include ../samples/response-status/405.json
     409:
       description: Conflict in request.
       body:
         application/json:
-          example: !include ../samples/response-status/409.sample
+          example: !include ../samples/response-status/409.json
     410:
       description: OAuth resource is not available.
       body:
         application/json:
-          example: !include ../samples/response-status/410.sample
+          example: !include ../samples/response-status/410.json
     500:
       description: Internal server error.
       body:
         application/json:
-          example: !include ../samples/response-status/500.sample
+          example: !include ../samples/response-status/500.json
     503:
       description: Service is unavailable.
       body:
         application/json:
-          example: !include ../samples/response-status/503.sample
+          example: !include ../samples/response-status/503.json
 settings:
   authorizationUri: https://console.cpdn.sd2.cz/authorize
   accessTokenUri: https://console.cpdn.sd2.cz/oauth/token
