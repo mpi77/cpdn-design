@@ -2,11 +2,12 @@
 header ( 'Content-Type: text/html; charset=utf-8' );
 date_default_timezone_set ("Europe/Prague");
 
-function metaResource($resource, $baseUri = "https://api.cpdn.sd2.cz/v1", $format = "application/json"){
-    return array(
+function metaResource($resource, $baseUri = "https://api.cpdn.sd2.cz/v1", $format = "application/json", $args = array()){
+    $r = array(
         "href" => sprintf("%s/%s",$baseUri, $resource),
         "mediaType" => $format
     );
+    return array_merge($r, $args);
 }
 
 $single = [
