@@ -1,8 +1,9 @@
 {
     "conductance": 0.1,
-    "meta": {
+    "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/spec\/",
-        "mediaType": "application\/json"
+        "mediaType": "application\/json",
+        "id": 33
     },
     "status": null,
     "susceptance": 0.1,

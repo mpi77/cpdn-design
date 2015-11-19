@@ -1,268 +1,50 @@
-[
-    {
-        "calc": {
-            "current": {
-                "dst": {
-                    "phase": 0.1,
-                    "ratio": 0.1,
-                    "value": 0.1
-                },
-                "src": {
-                    "phase": 0.1,
-                    "ratio": 0.1,
-                    "value": 0.1
-                }
-            },
-            "losses": {
-                "active": 0.1,
-                "reactive": 0.1
-            },
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
-                "mediaType": "application\/json"
-            },
-            "power": {
-                "dst": {
-                    "active": 0.1,
-                    "reactive": 0.1
-                },
-                "src": {
-                    "active": 0.1,
-                    "reactive": 0.1
-                }
-            }
-        },
-        "id": 33,
-        "meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/",
+        "mediaType": "application\/json"
+    },
+    "offset": 0,
+    "limit": 25,
+    "first": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/?offset=0",
             "mediaType": "application\/json"
-        },
-        "nodes": {
-            "dst": {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-                    "mediaType": "application\/json"
-                }
-            },
-            "src": {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-                    "mediaType": "application\/json"
-                }
-            },
-            "trc": null,
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/nodes\/",
-                "mediaType": "application\/json"
-            }
-        },
-        "paths": [
-            {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                    "mediaType": "application\/json"
-                }
-            },
-            {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                    "mediaType": "application\/json"
-                }
-            }
-        ],
-        "scheme": {
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
-                "mediaType": "application\/json"
-            }
-        },
-        "spec": {
-            "conductance": 0.1,
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/spec\/",
-                "mediaType": "application\/json"
-            },
-            "status": null,
-            "susceptance": 0.1,
-            "current": {
-                "max": 0.1,
-                "noLoad": 0.1
-            },
-            "reactance": {
-                "ratio": 0.1,
-                "value": 0.1
-            },
-            "resistance": {
-                "ratio": 0.1,
-                "value": 0.1
-            },
-            "losses": {
-                "noLoad": 0.1,
-                "short": {
-                    "ab": 0.1,
-                    "ac": 0.1,
-                    "bc": 0.1
-                }
-            },
-            "power": {
-                "rated": {
-                    "ab": 0.1,
-                    "ac": 0.1,
-                    "bc": 0.1
-                }
-            },
-            "voltage": {
-                "pri": {
-                    "actual": 0.1,
-                    "rated": 0.1
-                },
-                "sec": {
-                    "actual": 0.1,
-                    "rated": 0.1
-                },
-                "trc": {
-                    "actual": 0.1,
-                    "rated": 0.1
-                },
-                "short": {
-                    "ab": 0.1,
-                    "ac": 0.1,
-                    "bc": 0.1
-                }
-            }
         }
     },
-    {
-        "calc": {
-            "current": {
-                "dst": {
-                    "phase": 0.1,
-                    "ratio": 0.1,
-                    "value": 0.1
-                },
-                "src": {
-                    "phase": 0.1,
-                    "ratio": 0.1,
-                    "value": 0.1
-                }
-            },
-            "losses": {
-                "active": 0.1,
-                "reactive": 0.1
-            },
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
-                "mediaType": "application\/json"
-            },
-            "power": {
-                "dst": {
-                    "active": 0.1,
-                    "reactive": 0.1
-                },
-                "src": {
-                    "active": 0.1,
-                    "reactive": 0.1
-                }
-            }
-        },
-        "id": 33,
-        "meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
+    "previous": null,
+    "next": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/?offset=25",
             "mediaType": "application\/json"
-        },
-        "nodes": {
-            "dst": {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-                    "mediaType": "application\/json"
-                }
-            },
-            "src": {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-                    "mediaType": "application\/json"
-                }
-            },
-            "trc": null,
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/nodes\/",
-                "mediaType": "application\/json"
+        }
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/?offset=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
+                "mediaType": "application\/json",
+                "id": 33
             }
         },
-        "paths": [
-            {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                    "mediaType": "application\/json"
-                }
-            },
-            {
-                "meta": {
-                    "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                    "mediaType": "application\/json"
-                }
-            }
-        ],
-        "scheme": {
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
-                "mediaType": "application\/json"
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
+                "mediaType": "application\/json",
+                "id": 33
             }
         },
-        "spec": {
-            "conductance": 0.1,
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/spec\/",
-                "mediaType": "application\/json"
-            },
-            "status": null,
-            "susceptance": 0.1,
-            "current": {
-                "max": 0.1,
-                "noLoad": 0.1
-            },
-            "reactance": {
-                "ratio": 0.1,
-                "value": 0.1
-            },
-            "resistance": {
-                "ratio": 0.1,
-                "value": 0.1
-            },
-            "losses": {
-                "noLoad": 0.1,
-                "short": {
-                    "ab": 0.1,
-                    "ac": 0.1,
-                    "bc": 0.1
-                }
-            },
-            "power": {
-                "rated": {
-                    "ab": 0.1,
-                    "ac": 0.1,
-                    "bc": 0.1
-                }
-            },
-            "voltage": {
-                "pri": {
-                    "actual": 0.1,
-                    "rated": 0.1
-                },
-                "sec": {
-                    "actual": 0.1,
-                    "rated": 0.1
-                },
-                "trc": {
-                    "actual": 0.1,
-                    "rated": 0.1
-                },
-                "short": {
-                    "ab": 0.1,
-                    "ac": 0.1,
-                    "bc": 0.1
-                }
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
+                "mediaType": "application\/json",
+                "id": 33
             }
         }
-    }
-]
+    ]
+}

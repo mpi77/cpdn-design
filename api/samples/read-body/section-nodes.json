@@ -1,19 +1,22 @@
 {
     "dst": {
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-            "mediaType": "application\/json"
+            "mediaType": "application\/json",
+            "id": 22
         }
     },
     "src": {
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-            "mediaType": "application\/json"
+            "mediaType": "application\/json",
+            "id": 22
         }
     },
     "trc": null,
-    "meta": {
+    "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/nodes\/",
-        "mediaType": "application\/json"
+        "mediaType": "application\/json",
+        "id": 33
     }
 }

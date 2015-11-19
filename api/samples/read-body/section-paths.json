@@ -1,14 +1,16 @@
 [
     {
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-            "mediaType": "application\/json"
+            "mediaType": "application\/json",
+            "id": 1
         }
     },
     {
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-            "mediaType": "application\/json"
+            "mediaType": "application\/json",
+            "id": 1
         }
     }
 ]

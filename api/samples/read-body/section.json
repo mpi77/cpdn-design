@@ -1,133 +1,67 @@
 {
     "calc": {
-        "current": {
-            "dst": {
-                "phase": 0.1,
-                "ratio": 0.1,
-                "value": 0.1
-            },
-            "src": {
-                "phase": 0.1,
-                "ratio": 0.1,
-                "value": 0.1
-            }
-        },
-        "losses": {
-            "active": 0.1,
-            "reactive": 0.1
-        },
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
-            "mediaType": "application\/json"
-        },
-        "power": {
-            "dst": {
-                "active": 0.1,
-                "reactive": 0.1
-            },
-            "src": {
-                "active": 0.1,
-                "reactive": 0.1
-            }
+            "mediaType": "application\/json",
+            "id": 33
         }
     },
     "id": 33,
-    "meta": {
+    "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
-        "mediaType": "application\/json"
+        "mediaType": "application\/json",
+        "id": 33
     },
     "nodes": {
         "dst": {
-            "meta": {
+            "_meta": {
                 "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-                "mediaType": "application\/json"
+                "mediaType": "application\/json",
+                "id": 22
             }
         },
         "src": {
-            "meta": {
+            "_meta": {
                 "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
-                "mediaType": "application\/json"
+                "mediaType": "application\/json",
+                "id": 22
             }
         },
         "trc": null,
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/nodes\/",
-            "mediaType": "application\/json"
+            "mediaType": "application\/json",
+            "id": 33
         }
     },
     "paths": [
         {
-            "meta": {
+            "_meta": {
                 "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                "mediaType": "application\/json"
+                "mediaType": "application\/json",
+                "id": 1
             }
         },
         {
-            "meta": {
+            "_meta": {
                 "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                "mediaType": "application\/json"
+                "mediaType": "application\/json",
+                "id": 1
             }
         }
     ],
     "scheme": {
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
-            "mediaType": "application\/json"
+            "mediaType": "application\/json",
+            "id": 44
         }
     },
     "spec": {
-        "conductance": 0.1,
-        "meta": {
+        "_meta": {
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/spec\/",
-            "mediaType": "application\/json"
-        },
-        "status": null,
-        "susceptance": 0.1,
-        "current": {
-            "max": 0.1,
-            "noLoad": 0.1
-        },
-        "reactance": {
-            "ratio": 0.1,
-            "value": 0.1
-        },
-        "resistance": {
-            "ratio": 0.1,
-            "value": 0.1
-        },
-        "losses": {
-            "noLoad": 0.1,
-            "short": {
-                "ab": 0.1,
-                "ac": 0.1,
-                "bc": 0.1
-            }
-        },
-        "power": {
-            "rated": {
-                "ab": 0.1,
-                "ac": 0.1,
-                "bc": 0.1
-            }
-        },
-        "voltage": {
-            "pri": {
-                "actual": 0.1,
-                "rated": 0.1
-            },
-            "sec": {
-                "actual": 0.1,
-                "rated": 0.1
-            },
-            "trc": {
-                "actual": 0.1,
-                "rated": 0.1
-            },
-            "short": {
-                "ab": 0.1,
-                "ac": 0.1,
-                "bc": 0.1
-            }
+            "mediaType": "application\/json",
+            "id": 33
         }
     }
 }
