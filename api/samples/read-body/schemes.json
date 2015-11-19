@@ -1,0 +1,50 @@
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/",
+        "mediaType": "application\/json"
+    },
+    "offset": 0,
+    "limit": 25,
+    "first": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/?offset=0",
+            "mediaType": "application\/json"
+        }
+    },
+    "previous": null,
+    "next": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/?offset=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/?offset=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+                "mediaType": "application\/json",
+                "id": 44
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+                "mediaType": "application\/json",
+                "id": 44
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+                "mediaType": "application\/json",
+                "id": 44
+            }
+        }
+    ]
+}

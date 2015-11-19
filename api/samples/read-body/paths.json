@@ -1,0 +1,50 @@
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/",
+        "mediaType": "application\/json"
+    },
+    "offset": 0,
+    "limit": 25,
+    "first": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/?offset=0",
+            "mediaType": "application\/json"
+        }
+    },
+    "previous": null,
+    "next": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/?offset=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/?offset=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
+                "mediaType": "application\/json",
+                "id": 55
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
+                "mediaType": "application\/json",
+                "id": 55
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
+                "mediaType": "application\/json",
+                "id": 55
+            }
+        }
+    ]
+}
