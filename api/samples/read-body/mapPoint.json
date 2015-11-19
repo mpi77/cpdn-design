@@ -1,0 +1,23 @@
+{
+    "gps": {
+        "altitude": 0.1,
+        "latitude": 0.1,
+        "longitude": 0.1
+    },
+    "id": 11,
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
+        "mediaType": "application\/json",
+        "id": 11
+    },
+    "node": 1,
+    "scheme": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+            "mediaType": "application\/json",
+            "id": 44
+        }
+    },
+    "x": 100,
+    "y": 100
+}
