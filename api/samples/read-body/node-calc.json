@@ -3,9 +3,10 @@
         "active": 0.1,
         "reactive": 0.1
     },
-    "meta": {
+    "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/calc\/",
-        "mediaType": "application\/json"
+        "mediaType": "application\/json",
+        "id": 22
     },
     "voltage": {
         "dropKv": 0.1,

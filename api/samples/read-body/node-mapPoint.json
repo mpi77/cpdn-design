@@ -1,6 +1,7 @@
 {
-    "meta": {
+    "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
-        "mediaType": "application\/json"
+        "mediaType": "application\/json",
+        "id": 11
     }
 }

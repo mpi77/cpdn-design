@@ -1,128 +1,50 @@
-[
-    {
-        "calc": {
-            "load": {
-                "active": 0.1,
-                "reactive": 0.1
-            },
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/calc\/",
-                "mediaType": "application\/json"
-            },
-            "voltage": {
-                "dropKv": 0.1,
-                "dropProc": 0.1,
-                "phase": 0.1,
-                "value": 0.1
-            }
-        },
-        "id": 22,
-        "mapPoint": {
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
-                "mediaType": "application\/json"
-            }
-        },
-        "meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/",
+        "mediaType": "application\/json"
+    },
+    "offset": 0,
+    "limit": 25,
+    "first": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/?offset=0",
             "mediaType": "application\/json"
-        },
-        "scheme": {
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
-                "mediaType": "application\/json"
-            }
-        },
-        "spec": {
-            "cosFi": 0.1,
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/spec\/",
-                "mediaType": "application\/json"
-            },
-            "mi": 0.1,
-            "lambda": {
-                "max": 0.1,
-                "min": 0.1
-            },
-            "power": {
-                "active": 0.1,
-                "installed": 0.1,
-                "rated": 0.1,
-                "reactive": 0.1
-            },
-            "reactance": {
-                "longitudinal": 0.1,
-                "transverse": 0.1
-            },
-            "voltage": {
-                "level": 0.1,
-                "phase": 0.1,
-                "rated": 0.1,
-                "value": 0.1
-            }
         }
     },
-    {
-        "calc": {
-            "load": {
-                "active": 0.1,
-                "reactive": 0.1
-            },
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/calc\/",
-                "mediaType": "application\/json"
-            },
-            "voltage": {
-                "dropKv": 0.1,
-                "dropProc": 0.1,
-                "phase": 0.1,
-                "value": 0.1
-            }
-        },
-        "id": 22,
-        "mapPoint": {
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
-                "mediaType": "application\/json"
-            }
-        },
-        "meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+    "previous": null,
+    "next": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/?offset=25",
             "mediaType": "application\/json"
-        },
-        "scheme": {
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
-                "mediaType": "application\/json"
+        }
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/?offset=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+                "mediaType": "application\/json",
+                "id": 22
             }
         },
-        "spec": {
-            "cosFi": 0.1,
-            "meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/spec\/",
-                "mediaType": "application\/json"
-            },
-            "mi": 0.1,
-            "lambda": {
-                "max": 0.1,
-                "min": 0.1
-            },
-            "power": {
-                "active": 0.1,
-                "installed": 0.1,
-                "rated": 0.1,
-                "reactive": 0.1
-            },
-            "reactance": {
-                "longitudinal": 0.1,
-                "transverse": 0.1
-            },
-            "voltage": {
-                "level": 0.1,
-                "phase": 0.1,
-                "rated": 0.1,
-                "value": 0.1
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+                "mediaType": "application\/json",
+                "id": 22
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
+                "mediaType": "application\/json",
+                "id": 22
             }
         }
-    }
-]
+    ]
+}

@@ -1,8 +1,9 @@
 {
     "cosFi": 0.1,
-    "meta": {
+    "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/spec\/",
-        "mediaType": "application\/json"
+        "mediaType": "application\/json",
+        "id": 22
     },
     "mi": 0.1,
     "lambda": {
