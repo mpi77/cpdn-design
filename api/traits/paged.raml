@@ -2,9 +2,11 @@ description: Pagging feature for method that returns list of items.
 queryParameters:
   offset:
     description: Offset items from start
-    type: number
+    type: integer
+    default: 0
     example: 0
   limit:
     description: Items per page
-    type: number
-    example: 25
+    type: integer
+    default: 20
+    example: 20
