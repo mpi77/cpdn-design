@@ -1,12 +1,14 @@
 description: Pagging feature for method that returns list of items.
 queryParameters:
-  offset:
-    description: Offset items from start
+  pageNumber:
+    description: Page number
     type: integer
+    required: false
     default: 0
     example: 0
-  limit:
-    description: Items per page
+  pageSize:
+    description: Page size
     type: integer
+    required: false
     default: 20
     example: 20

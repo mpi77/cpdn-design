@@ -22,11 +22,12 @@ traits:
 
 /schemes:
   description: Scheme root resource
-  is: [ paged, searchable ]
   type:
     collection:
       exampleCollection: !include samples/read-body/schemes.json
       exampleCreateItem: !include samples/create-body/scheme.json
+      searchableDoc: |
+        description=string;name=string;version=int
   /{scheme_id}:
     type:
         collection-item-read-update-delete:
@@ -55,11 +56,12 @@ traits:
  
 /nodes:
   description: Node root resource
-  is: [ paged, searchable ]
   type:
     collection:
       exampleCollection: !include samples/read-body/nodes.json
       exampleCreateItem: !include samples/create-body/node.json
+      searchableDoc: |
+        mapPoint=int;scheme=int
   /{node_id}:
     type:
         collection-item-read-delete:
@@ -87,11 +89,12 @@ traits:
 
 /sections:
   description: Section root resource
-  is: [ paged, searchable ]
   type:
     collection:
       exampleCollection: !include samples/read-body/sections.json
       exampleCreateItem: !include samples/create-body/section.json
+      searchableDoc: |
+        nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int
   /{section_id}:
     type:
         collection-item-read-delete:
@@ -123,11 +126,12 @@ traits:
 
 /mapPoints:
   description: MapPoint root resource
-  is: [ paged, searchable ]
   type:
     collection:
       exampleCollection: !include samples/read-body/mapPoints.json
       exampleCreateItem: !include samples/create-body/mapPoint.json
+      searchableDoc: |
+        gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double;
   /{mapPoint_id}:
     type:
         collection-item-read-update-delete:
@@ -136,11 +140,12 @@ traits:
 
 /paths:
   description: Path root resource
-  is: [ paged, searchable ]
   type:
     collection:
       exampleCollection: !include samples/read-body/paths.json
       exampleCreateItem: !include samples/create-body/path.json
+      searchableDoc: |
+        mapPointSrc=int;mapPointDst=int;section=int
   /{path_id}:
     type:
         collection-item-read-update-delete:
