@@ -11,8 +11,8 @@
             "value": 0.1
         }
     },
-    "mapPoint":null,
-    "scheme":null,
+    "mapPoint":11,
+    "scheme":44,
     "spec": {
         "cosFi": 0.1,
         "mi": 0.1,

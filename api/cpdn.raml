@@ -13,6 +13,7 @@ resourceTypes:
   - collection: !include types/collection.raml
   - collection-item-read: !include types/collection-item-read.raml
   - collection-item-read-update: !include types/collection-item-read-update.raml
+  - collection-item-read-delete: !include types/collection-item-read-delete.raml
   - collection-item-read-update-delete: !include types/collection-item-read-update-delete.raml
 
 traits:
@@ -21,12 +22,36 @@ traits:
 
 /schemes:
   description: Scheme root resource
+  is: [ paged, searchable ]
+  type:
+    collection:
+      exampleCollection: !include samples/read-body/schemes.json
+      exampleCreateItem: !include samples/create-body/scheme.json
   /{scheme_id}:
+    type:
+        collection-item-read-update-delete:
+          exampleReadItem: !include samples/read-body/scheme.json
+          exampleUpdateItem: !include samples/update-body/scheme.json
     /nodes:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/scheme-nodes.json
     /sections:
-    /requests:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/scheme-sections.json
     /mapPoints:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/scheme-mapPoints.json
     /permissions:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/scheme-permissions.json
+    /requests:
+      type:
+        collection-item-read:
+          exampleReadItem: !include samples/read-body/scheme-requests.json
  
 /nodes:
   description: Node root resource
@@ -37,9 +62,8 @@ traits:
       exampleCreateItem: !include samples/create-body/node.json
   /{node_id}:
     type:
-        collection-item-read-update-delete:
+        collection-item-read-delete:
           exampleReadItem: !include samples/read-body/node.json
-          exampleUpdateItem: !include samples/update-body/node.json
     /calc:
       type:
         collection-item-read-update:
@@ -47,12 +71,14 @@ traits:
           exampleUpdateItem: !include samples/update-body/node-calc.json
     /mapPoint:
       type:
-        collection-item-read:
+        collection-item-read-update:
           exampleReadItem: !include samples/read-body/node-mapPoint.json
+          exampleUpdateItem: !include samples/update-body/node-mapPoint.json
     /scheme:
       type:
-        collection-item-read:
+        collection-item-read-update:
           exampleReadItem: !include samples/read-body/node-scheme.json
+          exampleUpdateItem: !include samples/update-body/node-scheme.json
     /spec:
       type:
         collection-item-read-update:
@@ -68,9 +94,8 @@ traits:
       exampleCreateItem: !include samples/create-body/section.json
   /{section_id}:
     type:
-        collection-item-read-update-delete:
+        collection-item-read-delete:
           exampleReadItem: !include samples/read-body/section.json
-          exampleUpdateItem: !include samples/update-body/section.json
     /calc:
       type:
         collection-item-read-update:
@@ -78,16 +103,18 @@ traits:
           exampleUpdateItem: !include samples/update-body/section-calc.json
     /nodes:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/section-paths.json
+        collection-item-read-update:
+          exampleReadItem: !include samples/read-body/section-nodes.json
+          exampleUpdateItem: !include samples/update-body/section-nodes.json
     /paths:
       type:
         collection-item-read:
           exampleReadItem: !include samples/read-body/section-paths.json
     /scheme:
       type:
-        collection-item-read:
+        collection-item-read-update:
           exampleReadItem: !include samples/read-body/section-scheme.json
+          exampleUpdateItem: !include samples/update-body/section-scheme.json
     /spec:
       type:
         collection-item-read-update:
@@ -96,17 +123,32 @@ traits:
 
 /mapPoints:
   description: MapPoint root resource
+  is: [ paged, searchable ]
+  type:
+    collection:
+      exampleCollection: !include samples/read-body/mapPoints.json
+      exampleCreateItem: !include samples/create-body/mapPoint.json
   /{mapPoint_id}:
-    /node:
-    /paths:
-      /src:
-      /dst:
-    /scheme:
+    type:
+        collection-item-read-update-delete:
+          exampleReadItem: !include samples/read-body/mapPoint.json
+          exampleUpdateItem: !include samples/update-body/mapPoint.json
 
 /paths:
   description: Path root resource
+  is: [ paged, searchable ]
+  type:
+    collection:
+      exampleCollection: !include samples/read-body/paths.json
+      exampleCreateItem: !include samples/create-body/path.json
   /{path_id}:
-    /section:
+    type:
+        collection-item-read-update-delete:
+          exampleReadItem: !include samples/read-body/path.json
+          exampleUpdateItem: !include samples/update-body/path.json
 
 /permissions:
   description: Schema permissions root resource
+  
+/requests:
+  description: Schema requests root resource

@@ -1,4 +1,11 @@
 {
+    "calc": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/calc\/",
+            "mediaType": "application\/json",
+            "id": 22
+        }
+    },
     "id": 22,
     "mapPoint": {
         "_meta": {
@@ -17,6 +24,13 @@
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
             "mediaType": "application\/json",
             "id": 44
+        }
+    },
+    "spec": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/spec\/",
+            "mediaType": "application\/json",
+            "id": 22
         }
     }
 }

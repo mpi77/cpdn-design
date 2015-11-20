@@ -27,14 +27,12 @@
             }
         }
     },
-    "id": null,
     "nodes": {
-        "dst": null,
-        "src": null,
+        "dst": 22,
+        "src": 22,
         "trc": null
     },
-    "paths": null,
-    "scheme": null,
+    "scheme": 44,
     "spec": {
         "conductance": 0.1,
         "status": null,

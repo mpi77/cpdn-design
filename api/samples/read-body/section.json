@@ -1,4 +1,11 @@
 {
+    "calc": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
+            "mediaType": "application\/json",
+            "id": 33
+        }
+    },
     "id": 33,
     "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
@@ -48,6 +55,13 @@
             "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
             "mediaType": "application\/json",
             "id": 44
+        }
+    },
+    "spec": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/spec\/",
+            "mediaType": "application\/json",
+            "id": 33
         }
     }
 }

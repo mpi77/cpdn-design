@@ -1,0 +1,11 @@
+{
+    "gps": {
+        "altitude": 0.1,
+        "latitude": 0.1,
+        "longitude": 0.1
+    },
+    "node": 22,
+    "scheme": 44,
+    "x": 200,
+    "y": 200
+}
