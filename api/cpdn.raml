@@ -16,6 +16,7 @@ resourceTypes:
   - item-read-update: !include types/item-read-update.raml
   - item-read-delete: !include types/item-read-delete.raml
   - item-read-update-delete: !include types/item-read-update-delete.raml
+  - item-create-delete: !include types/item-create-delete.raml
 
 traits:
   - paged: !include traits/paged.raml
@@ -191,6 +192,11 @@ traits:
           exampleCollection: !include samples/read-body/object-nodes.json
           searchableDoc: (mapPoint=int)
           sortableDoc: (mapPoint)
+    /node/{node_id}:
+      description: Create/delete relation between object_id and node_id
+      type:
+        item-create-delete:
+          exampleCreateItem: !include samples/create-body/object-node.json
 
 /permissions:
   description: Schema permissions root resource

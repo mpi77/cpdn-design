@@ -1,0 +1,90 @@
+description: Create/delete entity representing a <<resourcePathName|!singularize>>
+post:
+  description: Add a new <<resourcePathName|!singularize>>.
+  body:
+    application/json:
+      example: <<exampleCreateItem>>
+  responses:
+    201:
+      body:
+        application/json:
+          example: !include ../samples/response-status/201.json
+    400:
+      body:
+        application/json:
+          example: !include ../samples/response-status/400.json
+    401:
+      body:
+        application/json:
+          example: !include ../samples/response-status/401.json
+    403:
+      body:
+        application/json:
+          example: !include ../samples/response-status/403.json
+    404:
+      body:
+        application/json:
+          example: !include ../samples/response-status/404.json
+    405:
+      body:
+        application/json:
+          example: !include ../samples/response-status/405.json
+    409:
+      body:
+        application/json:
+          example: !include ../samples/response-status/409.json
+    410:
+      body:
+        application/json:
+          example: !include ../samples/response-status/410.json
+    500:
+      body:
+        application/json:
+          example: !include ../samples/response-status/500.json
+    503:
+      body:
+        application/json:
+          example: !include ../samples/response-status/503.json
+delete:
+  description: Delete the item of <<resourcePathName|!singularize>>
+  responses:
+    200:
+      body:
+        application/json:
+          example: !include ../samples/response-status/200.json
+    400:
+      body:
+        application/json:
+          example: !include ../samples/response-status/400.json
+    401:
+      body:
+        application/json:
+          example: !include ../samples/response-status/401.json
+    403:
+      body:
+        application/json:
+          example: !include ../samples/response-status/403.json
+    404:
+      body:
+        application/json:
+          example: !include ../samples/response-status/404.json
+    405:
+      body:
+        application/json:
+          example: !include ../samples/response-status/405.json
+    409:
+      body:
+        application/json:
+          example: !include ../samples/response-status/409.json
+    410:
+      body:
+        application/json:
+          example: !include ../samples/response-status/410.json
+    500:
+      body:
+        application/json:
+          example: !include ../samples/response-status/500.json
+    503:
+      body:
+        application/json:
+          example: !include ../samples/response-status/503.json
