@@ -27,8 +27,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/schemes.json
       exampleCreateItem: !include samples/create-body/scheme.json
-      searchableDoc: description=string;name=string;version=int
-      sortableDoc: 
+      searchableDoc: (description=string;name=string;version=int)
+      sortableDoc: (description,name,version)
   /{scheme_id}:
     type:
         collection-item-read-update-delete:
@@ -61,8 +61,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/nodes.json
       exampleCreateItem: !include samples/create-body/node.json
-      searchableDoc: mapPoint=int;scheme=int
-      sortableDoc: 
+      searchableDoc: (mapPoint=int;scheme=int)
+      sortableDoc: (mapPoint,scheme)
   /{node_id}:
     type:
         collection-item-read-delete:
@@ -94,8 +94,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/sections.json
       exampleCreateItem: !include samples/create-body/section.json
-      searchableDoc: nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int
-      sortableDoc: 
+      searchableDoc: (nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int)
+      sortableDoc: (nodeSrc,nodeDst,nodeTrc,scheme)
   /{section_id}:
     type:
         collection-item-read-delete:
@@ -131,8 +131,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/mapPoints.json
       exampleCreateItem: !include samples/create-body/mapPoint.json
-      searchableDoc: gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double
-      sortableDoc: 
+      searchableDoc: (gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double)
+      sortableDoc: (gpsLat,gpsLon,gpsAlt,node,scheme,x,y)
   /{mapPoint_id}:
     type:
         collection-item-read-update-delete:
@@ -145,8 +145,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/paths.json
       exampleCreateItem: !include samples/create-body/path.json
-      searchableDoc: mapPointSrc=int;mapPointDst=int;section=int
-      sortableDoc: 
+      searchableDoc: (mapPointSrc=int;mapPointDst=int;section=int)
+      sortableDoc: (mapPointSrc,mapPointDst,section)
   /{path_id}:
     type:
         collection-item-read-update-delete:
