@@ -53,6 +53,12 @@ traits:
           exampleCollection: !include samples/read-body/scheme-mapPoints.json
           searchableDoc: (gpsLat=double;gpsLon=double;gpsAlt=double;node=int;x=double;y=double)
           sortableDoc: (gpsLat,gpsLon,gpsAlt,node,x,y)
+    /objects:
+      type:
+        collection-read:
+          exampleCollection: !include samples/read-body/scheme-objects.json
+          searchableDoc: (name=string;scheme=int)
+          sortableDoc: (name,scheme)
     /permissions:
       type:
         collection-read:
@@ -165,6 +171,26 @@ traits:
         item-read-update-delete:
           exampleReadItem: !include samples/read-body/path.json
           exampleUpdateItem: !include samples/update-body/path.json
+
+/objects:
+  description: Object root resource
+  type:
+    collection-read-create:
+      exampleCollection: !include samples/read-body/objects.json
+      exampleCreateItem: !include samples/create-body/object.json
+      searchableDoc: (name=string;scheme=int)
+      sortableDoc: (name,scheme)
+  /{object_id}:
+    type:
+        item-read-update-delete:
+          exampleReadItem: !include samples/read-body/object.json
+          exampleUpdateItem: !include samples/update-body/object.json
+    /nodes:
+      type:
+        collection-read:
+          exampleCollection: !include samples/read-body/object-nodes.json
+          searchableDoc: (mapPoint=int)
+          sortableDoc: (mapPoint)
 
 /permissions:
   description: Schema permissions root resource

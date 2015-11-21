@@ -1,0 +1,14 @@
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/objects\/99\/",
+        "mediaType": "application\/json",
+        "id": 99
+    },
+    "id": 99,
+    "name": "object name",
+    "scheme": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+        "mediaType": "application\/json",
+        "id": 44
+    }
+}

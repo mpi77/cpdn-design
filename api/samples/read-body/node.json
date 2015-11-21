@@ -9,7 +9,7 @@
     "id": 22,
     "mapPoint": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoints\/11\/",
             "mediaType": "application\/json",
             "id": 11
         }
