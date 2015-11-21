@@ -1,6 +1,6 @@
 description: Read/create collection of <<resourcePathName>>.
 get:
-  is: [ paged, searchable: { searchableDoc: <<searchableDoc>> } ]
+  is: [ paged, searchable: { searchableDoc: <<searchableDoc>> }, sortable: { sortableDoc: <<sortableDoc>> } ]
   description: Get a list of <<resourcePathName>>.
   responses:
     200:

@@ -19,6 +19,7 @@ resourceTypes:
 traits:
   - paged: !include traits/paged.raml
   - searchable: !include traits/searchable.raml
+  - sortable: !include traits/sortable.raml
 
 /schemes:
   description: Scheme root resource
@@ -26,8 +27,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/schemes.json
       exampleCreateItem: !include samples/create-body/scheme.json
-      searchableDoc: |
-        description=string;name=string;version=int
+      searchableDoc: description=string;name=string;version=int
+      sortableDoc: 
   /{scheme_id}:
     type:
         collection-item-read-update-delete:
@@ -60,8 +61,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/nodes.json
       exampleCreateItem: !include samples/create-body/node.json
-      searchableDoc: |
-        mapPoint=int;scheme=int
+      searchableDoc: mapPoint=int;scheme=int
+      sortableDoc: 
   /{node_id}:
     type:
         collection-item-read-delete:
@@ -93,8 +94,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/sections.json
       exampleCreateItem: !include samples/create-body/section.json
-      searchableDoc: |
-        nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int
+      searchableDoc: nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int
+      sortableDoc: 
   /{section_id}:
     type:
         collection-item-read-delete:
@@ -130,8 +131,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/mapPoints.json
       exampleCreateItem: !include samples/create-body/mapPoint.json
-      searchableDoc: |
-        gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double;
+      searchableDoc: gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double
+      sortableDoc: 
   /{mapPoint_id}:
     type:
         collection-item-read-update-delete:
@@ -144,8 +145,8 @@ traits:
     collection:
       exampleCollection: !include samples/read-body/paths.json
       exampleCreateItem: !include samples/create-body/path.json
-      searchableDoc: |
-        mapPointSrc=int;mapPointDst=int;section=int
+      searchableDoc: mapPointSrc=int;mapPointDst=int;section=int
+      sortableDoc: 
   /{path_id}:
     type:
         collection-item-read-update-delete:

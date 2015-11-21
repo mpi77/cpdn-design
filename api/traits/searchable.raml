@@ -1,6 +1,9 @@
 description: Searchable feature for method that returns filtered collection.
 queryParameters:
   q:
-    description: Query string.
+    description: |
+      The list of semicolon-separated properties used to filter the collection.
+      General example: color=blue;wheels=15; ...
     type: string
+    required: false
     example: <<searchableDoc>>
