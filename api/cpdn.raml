@@ -10,11 +10,12 @@ securitySchemes:
   - oauth_2_0: !include schemes/oauth2.raml
 
 resourceTypes:
-  - collection: !include types/collection.raml
-  - collection-item-read: !include types/collection-item-read.raml
-  - collection-item-read-update: !include types/collection-item-read-update.raml
-  - collection-item-read-delete: !include types/collection-item-read-delete.raml
-  - collection-item-read-update-delete: !include types/collection-item-read-update-delete.raml
+  - collection-read: !include types/collection-read.raml
+  - collection-read-create: !include types/collection-read-create.raml
+  - item-read: !include types/item-read.raml
+  - item-read-update: !include types/item-read-update.raml
+  - item-read-delete: !include types/item-read-delete.raml
+  - item-read-update-delete: !include types/item-read-update-delete.raml
 
 traits:
   - paged: !include traits/paged.raml
@@ -24,132 +25,144 @@ traits:
 /schemes:
   description: Scheme root resource
   type:
-    collection:
+    collection-read-create:
       exampleCollection: !include samples/read-body/schemes.json
       exampleCreateItem: !include samples/create-body/scheme.json
       searchableDoc: (description=string;name=string;version=int)
       sortableDoc: (description,name,version)
   /{scheme_id}:
     type:
-        collection-item-read-update-delete:
+        item-read-update-delete:
           exampleReadItem: !include samples/read-body/scheme.json
           exampleUpdateItem: !include samples/update-body/scheme.json
     /nodes:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/scheme-nodes.json
+        collection-read:
+          exampleCollection: !include samples/read-body/scheme-nodes.json
+          searchableDoc: (mapPoint=int)
+          sortableDoc: (mapPoint)
     /sections:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/scheme-sections.json
+        collection-read:
+          exampleCollection: !include samples/read-body/scheme-sections.json
+          searchableDoc: (nodeSrc=int;nodeDst=int;nodeTrc=int)
+          sortableDoc: (nodeSrc,nodeDst,nodeTrc)
     /mapPoints:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/scheme-mapPoints.json
+        collection-read:
+          exampleCollection: !include samples/read-body/scheme-mapPoints.json
+          searchableDoc: (gpsLat=double;gpsLon=double;gpsAlt=double;node=int;x=double;y=double)
+          sortableDoc: (gpsLat,gpsLon,gpsAlt,node,x,y)
     /permissions:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/scheme-permissions.json
+        collection-read:
+          exampleCollection: !include samples/read-body/scheme-permissions.json
+          searchableDoc: ()
+          sortableDoc: ()
     /requests:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/scheme-requests.json
+        collection-read:
+          exampleCollection: !include samples/read-body/scheme-requests.json
+          searchableDoc: ()
+          sortableDoc: ()
  
 /nodes:
   description: Node root resource
   type:
-    collection:
+    collection-read-create:
       exampleCollection: !include samples/read-body/nodes.json
       exampleCreateItem: !include samples/create-body/node.json
       searchableDoc: (mapPoint=int;scheme=int)
       sortableDoc: (mapPoint,scheme)
   /{node_id}:
     type:
-        collection-item-read-delete:
+        item-read-delete:
           exampleReadItem: !include samples/read-body/node.json
     /calc:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/node-calc.json
           exampleUpdateItem: !include samples/update-body/node-calc.json
     /mapPoint:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/node-mapPoint.json
           exampleUpdateItem: !include samples/update-body/node-mapPoint.json
     /scheme:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/node-scheme.json
           exampleUpdateItem: !include samples/update-body/node-scheme.json
     /spec:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/node-spec.json
           exampleUpdateItem: !include samples/update-body/node-spec.json
 
 /sections:
   description: Section root resource
   type:
-    collection:
+    collection-read-create:
       exampleCollection: !include samples/read-body/sections.json
       exampleCreateItem: !include samples/create-body/section.json
       searchableDoc: (nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int)
       sortableDoc: (nodeSrc,nodeDst,nodeTrc,scheme)
   /{section_id}:
     type:
-        collection-item-read-delete:
+        item-read-delete:
           exampleReadItem: !include samples/read-body/section.json
     /calc:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/section-calc.json
           exampleUpdateItem: !include samples/update-body/section-calc.json
     /nodes:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/section-nodes.json
           exampleUpdateItem: !include samples/update-body/section-nodes.json
     /paths:
       type:
-        collection-item-read:
-          exampleReadItem: !include samples/read-body/section-paths.json
+        collection-read:
+          exampleCollection: !include samples/read-body/section-paths.json
+          searchableDoc: (mapPointSrc=int;mapPointDst=int)
+          sortableDoc: (mapPointSrc,mapPointDst)
     /scheme:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/section-scheme.json
           exampleUpdateItem: !include samples/update-body/section-scheme.json
     /spec:
       type:
-        collection-item-read-update:
+        item-read-update:
           exampleReadItem: !include samples/read-body/section-spec.json
           exampleUpdateItem: !include samples/update-body/section-spec.json
 
 /mapPoints:
   description: MapPoint root resource
   type:
-    collection:
+    collection-read-create:
       exampleCollection: !include samples/read-body/mapPoints.json
       exampleCreateItem: !include samples/create-body/mapPoint.json
       searchableDoc: (gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double)
       sortableDoc: (gpsLat,gpsLon,gpsAlt,node,scheme,x,y)
   /{mapPoint_id}:
     type:
-        collection-item-read-update-delete:
+        item-read-update-delete:
           exampleReadItem: !include samples/read-body/mapPoint.json
           exampleUpdateItem: !include samples/update-body/mapPoint.json
 
 /paths:
   description: Path root resource
   type:
-    collection:
+    collection-read-create:
       exampleCollection: !include samples/read-body/paths.json
       exampleCreateItem: !include samples/create-body/path.json
       searchableDoc: (mapPointSrc=int;mapPointDst=int;section=int)
       sortableDoc: (mapPointSrc,mapPointDst,section)
   /{path_id}:
     type:
-        collection-item-read-update-delete:
+        item-read-update-delete:
           exampleReadItem: !include samples/read-body/path.json
           exampleUpdateItem: !include samples/update-body/path.json
 

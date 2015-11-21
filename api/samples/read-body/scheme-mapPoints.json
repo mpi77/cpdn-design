@@ -1,16 +1,43 @@
-[
-    {
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/scheme/44/mapPoints\/",
+        "mediaType": "application\/json"
+    },
+    "pageNumber": 1,
+    "pageSize": 25,
+    "first": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
-            "mediaType": "application\/json",
-            "id": 11
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/scheme/44/mapPoints\/?pageNumber=1&pageSize=25",
+            "mediaType": "application\/json"
         }
     },
-    {
+    "previous": null,
+    "next": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoint\/11\/",
-            "mediaType": "application\/json",
-            "id": 11
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/scheme/44/mapPoints\/?pageNumber=2&pageSize=25",
+            "mediaType": "application\/json"
         }
-    }
-]
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/scheme/44/mapPoints\/?pageNumber=5&pageSize=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoints\/11\/",
+                "mediaType": "application\/json",
+                "id": 11
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoints\/11\/",
+                "mediaType": "application\/json",
+                "id": 11
+            }
+        }
+    ]
+}

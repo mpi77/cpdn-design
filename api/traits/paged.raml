@@ -1,14 +1,17 @@
-description: Pagging feature for method that returns list of items.
+description: |
+  Pagging feature for method that returns list of items.
+  This feature IS NOT required. If you want select all 
+  items from collection, do not use these query parameters.
 queryParameters:
   pageNumber:
     description: Page number
     type: integer
     required: false
-    default: 0
-    example: 0
+    default: 1
+    example: 1
   pageSize:
     description: Page size
     type: integer
     required: false
-    default: 20
-    example: 20
+    default: 25
+    example: 25

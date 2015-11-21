@@ -1,16 +1,43 @@
-[
-    {
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/",
+        "mediaType": "application\/json"
+    },
+    "pageNumber": 1,
+    "pageSize": 25,
+    "first": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-            "mediaType": "application\/json",
-            "id": 1
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/?pageNumber=1&pageSize=25",
+            "mediaType": "application\/json"
         }
     },
-    {
+    "previous": null,
+    "next": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-            "mediaType": "application\/json",
-            "id": 1
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/?pageNumber=2&pageSize=25",
+            "mediaType": "application\/json"
         }
-    }
-]
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/?pageNumber=5&pageSize=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
+                "mediaType": "application\/json",
+                "id": 1
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
+                "mediaType": "application\/json",
+                "id": 1
+            }
+        }
+    ]
+}
