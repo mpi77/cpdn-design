@@ -172,7 +172,6 @@ traits:
         item-read-update-delete:
           exampleReadItem: !include samples/read-body/path.json
           exampleUpdateItem: !include samples/update-body/path.json
-
 /objects:
   description: Object root resource
   type:
@@ -197,6 +196,18 @@ traits:
       type:
         item-create-delete:
           exampleCreateItem: !include samples/create-body/object-node.json
+/notifications:
+  description: Notification root resource
+  type:
+    collection-read:
+      exampleCollection: !include samples/read-body/notifications.json
+      searchableDoc: (user=int;title=string;tsCreate=string-time;tsRead=string-time)
+      sortableDoc: (user,title,tsCreate,tsRead)
+  /{notification_id}:
+    type:
+        item-read-update:
+          exampleReadItem: !include samples/read-body/notification.json
+          exampleUpdateItem: !include samples/update-body/notification.json
 
 /permissions:
   description: Schema permissions root resource
