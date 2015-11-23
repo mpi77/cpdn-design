@@ -1,0 +1,43 @@
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/",
+        "mediaType": "application\/json"
+    },
+    "pageNumber": 1,
+    "pageSize": 25,
+    "first": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/?pageNumber=1&pageSize=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "previous": null,
+    "next": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/?pageNumber=2&pageSize=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "last": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/?pageNumber=5&pageSize=25",
+            "mediaType": "application\/json"
+        }
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/109\/",
+                "mediaType": "application\/json",
+                "id": 109
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/109\/",
+                "mediaType": "application\/json",
+                "id": 109
+            }
+        }
+    ]
+}
