@@ -381,11 +381,17 @@ USE `cpdn-oauth` ;
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`client` (
   `client_id` VARCHAR(80) NOT NULL COMMENT '',
   `client_secret` VARCHAR(80) NULL DEFAULT NULL COMMENT '',
-  `redirect_uri` VARCHAR(2000) NOT NULL COMMENT '',
+  `redirect_uri` VARCHAR(2000) NULL COMMENT '',
   `grant_types` VARCHAR(80) NULL DEFAULT NULL COMMENT '',
-  `scope` VARCHAR(100) NULL DEFAULT NULL COMMENT '',
-  `user_id` VARCHAR(80) NULL DEFAULT NULL COMMENT '',
-  PRIMARY KEY (`client_id`)  COMMENT '')
+  `scope` VARCHAR(2000) NULL DEFAULT NULL COMMENT '',
+  `user_id` INT NULL COMMENT '',
+  PRIMARY KEY (`client_id`)  COMMENT '',
+  INDEX `fk_client_profile1_idx` (`user_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_client_profile1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -395,7 +401,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`access_token` (
   `access_token` VARCHAR(40) NOT NULL COMMENT '',
-  `client_id` VARCHAR(80) NOT NULL COMMENT '',
+  `client_id` VARCHAR(80) NULL COMMENT '',
   `user_id` INT NULL COMMENT '',
   `expires` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
   `scope` VARCHAR(2000) NULL DEFAULT NULL COMMENT '',
@@ -421,7 +427,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`authorization_code` (
   `authorization_code` VARCHAR(40) NOT NULL COMMENT '',
-  `client_id` VARCHAR(80) NOT NULL COMMENT '',
+  `client_id` VARCHAR(80) NULL COMMENT '',
   `user_id` INT NULL COMMENT '',
   `redirect_uri` VARCHAR(2000) NULL DEFAULT NULL COMMENT '',
   `expires` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
@@ -465,7 +471,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`refresh_token` (
   `refresh_token` VARCHAR(40) NOT NULL COMMENT '',
-  `client_id` VARCHAR(80) NOT NULL COMMENT '',
+  `client_id` VARCHAR(80) NULL COMMENT '',
   `user_id` INT NULL COMMENT '',
   `expires` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '',
   `scope` VARCHAR(2000) NULL DEFAULT NULL COMMENT '',
@@ -490,8 +496,9 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `cpdn-oauth`.`scope`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`scope` (
-  `scope` TEXT NULL DEFAULT NULL COMMENT '',
-  `is_default` TINYINT(1) NULL DEFAULT NULL COMMENT '')
+  `scope` VARCHAR(80) NOT NULL DEFAULT 'default' COMMENT '',
+  `is_default` TINYINT(1) NULL COMMENT '',
+  PRIMARY KEY (`scope`)  COMMENT '')
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -501,10 +508,18 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`user` (
   `username` VARCHAR(255) NOT NULL COMMENT '',
-  `password` VARCHAR(2000) NULL DEFAULT NULL COMMENT '',
+  `password` VARCHAR(255) NOT NULL COMMENT '',
   `first_name` VARCHAR(255) NULL DEFAULT NULL COMMENT '',
   `last_name` VARCHAR(255) NULL DEFAULT NULL COMMENT '',
-  PRIMARY KEY (`username`)  COMMENT '')
+  `scope` VARCHAR(2000) NULL COMMENT '',
+  `user_id` INT NULL COMMENT '',
+  PRIMARY KEY (`username`)  COMMENT '',
+  INDEX `fk_user_profile1_idx` (`user_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_user_profile1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
