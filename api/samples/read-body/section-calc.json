@@ -1,4 +1,11 @@
 {
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
+        "mediaType": "application\/json",
+        "id": 33,
+        "tsCreate": "2015-01-01T00:00:00.000Z",
+        "tsUpdate": "2015-01-01T00:00:00.000Z"
+    },
     "current": {
         "dst": {
             "phase": 0.1,
@@ -14,11 +21,6 @@
     "losses": {
         "active": 0.1,
         "reactive": 0.1
-    },
-    "_meta": {
-        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
-        "mediaType": "application\/json",
-        "id": 33
     },
     "power": {
         "dst": {

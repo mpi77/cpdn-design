@@ -2,13 +2,13 @@
     "_meta": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/109\/",
         "mediaType": "application\/json",
-        "id": 109
+        "id": 109,
+        "tsCreate": "2015-01-01T00:00:00.000Z",
+        "tsUpdate": "2015-01-01T00:00:00.000Z",
+        "tsRead": null
     },
-    "id": 109,
     "title": "notification title",
     "content": "notification text content",
-    "tsCreate": "2015-01-01T00:00:00.000Z",
-    "tsRead": null,
     "user": {
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/users\/7\/",
         "mediaType": "application\/json",

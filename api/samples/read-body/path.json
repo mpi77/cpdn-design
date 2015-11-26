@@ -1,4 +1,11 @@
 {
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
+        "mediaType": "application\/json",
+        "id": 55,
+        "tsCreate": "2015-01-01T00:00:00.000Z",
+        "tsUpdate": "2015-01-01T00:00:00.000Z"
+    },
     "mapPoint": {
         "dst": {
             "_meta": {
@@ -14,12 +21,6 @@
                 "id": 11
             }
         }
-    },
-    "id": 55,
-    "_meta": {
-        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
-        "mediaType": "application\/json",
-        "id": 55
     },
     "section": {
         "_meta": {

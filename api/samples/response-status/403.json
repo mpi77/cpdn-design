@@ -5,6 +5,5 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/called\/resource\/",
         "mediaType": "application\/json"
     },
-    "status": 403,
     "usrMessage": "Forbidden access to resource."
 }

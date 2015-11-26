@@ -1,43 +1,50 @@
 {
     "_meta": {
-        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/",
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/paths\/",
         "mediaType": "application\/json"
     },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
+                "mediaType": "application\/json",
+                "id": 55
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
+                "mediaType": "application\/json",
+                "id": 55
+            }
+        }
+    ],
     "pageNumber": 1,
     "pageSize": 25,
+    "itemsTotal": 100,
+    "pagesTotal": 4,
     "first": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/?pageNumber=1&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/paths\/?pageNumber=1&pageSize=25",
             "mediaType": "application\/json"
         }
     },
-    "previous": null,
+    "previous": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/paths\/?pageNumber=1&pageSize=25",
+            "mediaType": "application\/json"
+        }
+    },
     "next": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/?pageNumber=2&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/paths\/?pageNumber=2&pageSize=25",
             "mediaType": "application\/json"
         }
     },
     "last": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections/33/paths\/?pageNumber=5&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/paths\/?pageNumber=4&pageSize=25",
             "mediaType": "application\/json"
         }
-    },
-    "items": [
-        {
-            "_meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                "mediaType": "application\/json",
-                "id": 1
-            }
-        },
-        {
-            "_meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/1\/",
-                "mediaType": "application\/json",
-                "id": 1
-            }
-        }
-    ]
+    }
 }
