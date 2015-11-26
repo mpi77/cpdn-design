@@ -30,8 +30,8 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/schemes.json
       exampleCreateItem: !include samples/create-body/scheme.json
-      searchableDoc: (description=string;name=string;version=int)
-      sortableDoc: (description,name,version)
+      searchableDoc: (description=string;name=string;version=int,lock=string-bool)
+      sortableDoc: (description,name,version,lock)
       expandableDoc: (scheme)
   /{scheme_id}:
     type:
@@ -64,31 +64,31 @@ traits:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-objects.json
-          searchableDoc: (name=string;scheme=int)
-          sortableDoc: (name,scheme)
+          searchableDoc: (name=string)
+          sortableDoc: (name)
           expandableDoc: (object)
     /permissions:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-permissions.json
-          searchableDoc: ()
-          sortableDoc: ()
-          expandableDoc: ()
-    /requests:
+          searchableDoc: (user=int;mode=string;tsFrom=string-time;tsTo=string-time)
+          sortableDoc: (user,mode,tsFrom,tsTo)
+          expandableDoc: (permission,permission.user)
+    /tasks:
       type:
         collection-read:
-          exampleCollection: !include samples/read-body/scheme-requests.json
-          searchableDoc: ()
-          sortableDoc: ()
-          expandableDoc: ()
- 
+          exampleCollection: !include samples/read-body/scheme-tasks.json
+          searchableDoc: (user=int;executor=int;status=string;priority=int)
+          sortableDoc: (user,executor,status,priority)
+          expandableDoc: (task,task.user,task.executor)
+
 /nodes:
   description: Node root resource
   type:
     collection-read-create:
       exampleCollection: !include samples/read-body/nodes.json
       exampleCreateItem: !include samples/create-body/node.json
-      searchableDoc: (mapPoint=int;scheme=int)
+      searchableDoc: (SCHEME=int;mapPoint=int)
       sortableDoc: (mapPoint,scheme)
       expandableDoc: (node,node.calc,node.mapPoint,node.scheme,node.spec)
   /{node_id}:
@@ -127,7 +127,7 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/sections.json
       exampleCreateItem: !include samples/create-body/section.json
-      searchableDoc: (nodes.src=int;nodes.dst=int;nodes.trc=int;scheme=int)
+      searchableDoc: (SCHEME=int;nodes.src=int;nodes.dst=int;nodes.trc=int)
       sortableDoc: (nodes.src,nodes.dst,nodes.trc,scheme)
       expandableDoc: (section,section.calc,section.nodes,section.scheme,section.spec)
   /{section_id}:
@@ -173,7 +173,7 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/mapPoints.json
       exampleCreateItem: !include samples/create-body/mapPoint.json
-      searchableDoc: (gps.lat=double;gps.lon=double;gps.alt=double;node=int;scheme=int;x=double;y=double)
+      searchableDoc: (SCHEME=int;gps.lat=double;gps.lon=double;gps.alt=double;node=int;x=double;y=double)
       sortableDoc: (gps.lat,gps.lon,gps.alt,node,scheme,x,y)
       expandableDoc: (mapPoint,mapPoint.node,mapPoint.scheme)
   /{mapPoint_id}:
@@ -189,7 +189,7 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/paths.json
       exampleCreateItem: !include samples/create-body/path.json
-      searchableDoc: (mapPoint.src=int;mapPoint.dst=int;section=int)
+      searchableDoc: (SECTION=int;mapPoint.src=int;mapPoint.dst=int)
       sortableDoc: (mapPoint.src,mapPoint.dst,section)
       expandableDoc: (path,path.mapPoint.dst,path.mapPoint.src,path.section)
   /{path_id}:
@@ -198,14 +198,15 @@ traits:
           exampleReadItem: !include samples/read-body/path.json
           exampleUpdateItem: !include samples/update-body/path.json
           expandableDoc: (mapPoint.dst,mapPoint.src,section)
+
 /objects:
   description: Object root resource
   type:
     collection-read-create:
       exampleCollection: !include samples/read-body/objects.json
       exampleCreateItem: !include samples/create-body/object.json
-      searchableDoc: (name=string;scheme=int)
-      sortableDoc: (name,scheme)
+      searchableDoc: (SCHEME=int;name=string)
+      sortableDoc: (scheme,name)
       expandableDoc: (object,object.scheme)
   /{object_id}:
     type:
@@ -217,20 +218,21 @@ traits:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/object-nodes.json
-          searchableDoc: (mapPoint=int)
-          sortableDoc: (mapPoint)
+          searchableDoc: ()
+          sortableDoc: ()
           expandableDoc: (node,node.calc,node.mapPoint,node.scheme,node.spec)
     /node/{node_id}:
       description: Create/delete relation between object_id and node_id
       type:
         item-create-delete:
           exampleCreateItem: !include samples/create-body/object-node.json
+
 /notifications:
   description: Notification root resource
   type:
     collection-read:
       exampleCollection: !include samples/read-body/notifications.json
-      searchableDoc: (user=int;title=string;tsCreate=string-time;tsRead=string-time)
+      searchableDoc: (USER=int;title=string;tsCreate=string-time;tsRead=string-time)
       sortableDoc: (user,title,tsCreate,tsRead)
       expandableDoc: (notification,notification.user)
   /{notification_id}:
@@ -242,6 +244,59 @@ traits:
 
 /permissions:
   description: Schema permissions root resource
-  
-/requests:
-  description: Schema requests root resource
+  type:
+    collection-read-create:
+      exampleCollection: !include samples/read-body/permission.json
+      exampleCreateItem: !include samples/create-body/permission.json
+      searchableDoc: (SCHEME=int;user=int;mode=string;tsFrom=string-time;tsTo=string-time)
+      sortableDoc: (scheme,user,mode,tsFrom,tsTo)
+      expandableDoc: (permission,permission.user,permission.scheme)
+  /{permission_id}:
+    type:
+      item-read-update-delete:
+        exampleReadItem: !include samples/read-body/permission.json
+        exampleUpdateItem: !include samples/update-body/permission.json
+        expandableDoc: (user,scheme)
+
+/tasks:
+  description: Schema task root resource
+  type:
+    collection-read-create:
+      exampleCollection: !include samples/read-body/tasks.json
+      exampleCreateItem: !include samples/create-body/task.json
+      searchableDoc: (SCHEME=int;user=int;executor=int;status=string;priority=int)
+      sortableDoc: (user,executor,scheme,status,priority)
+      expandableDoc: (task,task.user,task.executor,task.scheme)
+  /{task_id}:
+    type:
+      item-read:
+        exampleReadItem: !include samples/read-body/task.json
+        expandableDoc: (user,executor,scheme)
+
+/executors:
+  description: Executor root resource
+  type:
+    collection-read:
+      exampleCollection: !include samples/read-body/executors.json
+      searchableDoc: (title=string;status=string)
+      sortableDoc: (title,status)
+      expandableDoc: (executor)
+  /{executor_id}:
+    type:
+      item-read:
+        exampleReadItem: !include samples/read-body/executor.json
+        expandableDoc: ()
+
+/users:
+  description: User root resource
+  type:
+    collection-read:
+      exampleCollection: !include samples/read-body/users.json
+      searchableDoc: (firstName=string;lastName=string,nick=string;email=string)
+      sortableDoc: (firstName,lastName,nick,email)
+      expandableDoc: (user)
+  /{user_id}:
+    type:
+      item-read:
+        exampleReadItem: !include samples/read-body/user.json
+        expandableDoc: ()

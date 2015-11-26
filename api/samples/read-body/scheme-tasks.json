@@ -1,21 +1,21 @@
 {
     "_meta": {
-        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/objects\/",
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/tasks\/",
         "mediaType": "application\/json"
     },
     "items": [
         {
             "_meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/objects\/99\/",
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/tasks\/88\/",
                 "mediaType": "application\/json",
-                "id": 99
+                "id": 88
             }
         },
         {
             "_meta": {
-                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/objects\/99\/",
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/tasks\/88\/",
                 "mediaType": "application\/json",
-                "id": 99
+                "id": 88
             }
         }
     ],
@@ -25,25 +25,25 @@
     "pagesTotal": 4,
     "first": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/objects\/?pageNumber=1&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/tasks\/?pageNumber=1&pageSize=25",
             "mediaType": "application\/json"
         }
     },
     "previous": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/objects\/?pageNumber=1&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/tasks\/?pageNumber=1&pageSize=25",
             "mediaType": "application\/json"
         }
     },
     "next": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/objects\/?pageNumber=2&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/tasks\/?pageNumber=2&pageSize=25",
             "mediaType": "application\/json"
         }
     },
     "last": {
         "_meta": {
-            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/objects\/?pageNumber=4&pageSize=25",
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/tasks\/?pageNumber=4&pageSize=25",
             "mediaType": "application\/json"
         }
     }

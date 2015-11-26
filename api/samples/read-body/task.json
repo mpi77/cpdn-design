@@ -1,0 +1,36 @@
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/tasks\/88\/",
+        "mediaType": "application\/json",
+        "id": 88,
+        "tsCreate": "2015-01-01T00:00:00.000Z",
+        "tsUpdate": "2015-01-01T00:00:00.000Z"
+    },
+    "user": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/users\/7\/",
+            "mediaType": "application\/json",
+            "id": 7
+        }
+    },
+    "executor": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/executors\/222\/",
+            "mediaType": "application\/json",
+            "id": 222
+        }
+    },
+    "scheme": {
+        "_meta": {
+            "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
+            "mediaType": "application\/json",
+            "id": 44
+        }
+    },
+    "status": "new",
+    "priority": 1,
+    "command": "{json:encoded:command:to:executor}",
+    "result": "{json:encoded:result:from:executor}",
+    "tsReceived": "2015-01-01T00:00:00.000Z",
+    "tsExecuted": "2015-01-01T00:00:00.000Z"
+}

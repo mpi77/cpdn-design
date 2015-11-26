@@ -7,6 +7,7 @@
         "tsUpdate": "2015-01-01T00:00:00.000Z"
     },
     "description": "some description of the scheme",
+    "lock": false,
     "name": "some scheme name",
     "version": 1
 }
