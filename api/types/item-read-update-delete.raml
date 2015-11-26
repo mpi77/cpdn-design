@@ -1,6 +1,7 @@
 description:  Read/update/delete entity representing a <<resourcePathName|!singularize>>
 get:
   description: Get the collection item of <<resourcePathName|!singularize>>
+  is: [ expandable: { expandableDoc: <<expandableDoc>> } ]
   responses:
     200:
       body:
