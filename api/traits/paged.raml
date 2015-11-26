@@ -1,16 +1,21 @@
 description: |
   Pagging feature for method that returns list of items.
   This feature IS NOT required. If you want select all 
-  items from collection, do not use these query parameters.
+  items from collection without paged feature, 
+  DO NOT USE these query parameters.
 queryParameters:
   pageNumber:
-    description: Page number
+    description: |
+      Page number. If you want select all items from collection 
+      without paged feature, DO NOT USE this query parameter.
     type: integer
     required: false
     default: 1
     example: 1
   pageSize:
-    description: Page size
+    description: |
+      Page size. If you want select all items from collection 
+      without paged feature, DO NOT USE this query parameter.
     type: integer
     required: false
     default: 25
