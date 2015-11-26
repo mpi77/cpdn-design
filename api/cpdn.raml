@@ -22,6 +22,7 @@ traits:
   - paged: !include traits/paged.raml
   - searchable: !include traits/searchable.raml
   - sortable: !include traits/sortable.raml
+  - expandable: !include traits/expandable.raml
 
 /schemes:
   description: Scheme root resource
@@ -31,47 +32,55 @@ traits:
       exampleCreateItem: !include samples/create-body/scheme.json
       searchableDoc: (description=string;name=string;version=int)
       sortableDoc: (description,name,version)
+      expandableDoc: (scheme)
   /{scheme_id}:
     type:
         item-read-update-delete:
           exampleReadItem: !include samples/read-body/scheme.json
           exampleUpdateItem: !include samples/update-body/scheme.json
+          expandableDoc: ()
     /nodes:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-nodes.json
           searchableDoc: (mapPoint=int)
           sortableDoc: (mapPoint)
+          expandableDoc: (node,node.calc,node.mapPoint,node.spec)
     /sections:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-sections.json
-          searchableDoc: (nodeSrc=int;nodeDst=int;nodeTrc=int)
-          sortableDoc: (nodeSrc,nodeDst,nodeTrc)
+          searchableDoc: (nodes.src=int;nodes.dst=int;nodes.trc=int)
+          sortableDoc: (nodes.src,nodes.dst,nodes.trc)
+          expandableDoc: (section,section.calc,section.nodes,section.spec)
     /mapPoints:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-mapPoints.json
-          searchableDoc: (gpsLat=double;gpsLon=double;gpsAlt=double;node=int;x=double;y=double)
-          sortableDoc: (gpsLat,gpsLon,gpsAlt,node,x,y)
+          searchableDoc: (gps.lat=double;gps.lon=double;gps.alt=double;node=int;x=double;y=double)
+          sortableDoc: (gps.lat,gps.lon,gps.alt,node,x,y)
+          expandableDoc: (mapPoint)
     /objects:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-objects.json
           searchableDoc: (name=string;scheme=int)
           sortableDoc: (name,scheme)
+          expandableDoc: (object)
     /permissions:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-permissions.json
           searchableDoc: ()
           sortableDoc: ()
+          expandableDoc: ()
     /requests:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/scheme-requests.json
           searchableDoc: ()
           sortableDoc: ()
+          expandableDoc: ()
  
 /nodes:
   description: Node root resource
@@ -81,30 +90,36 @@ traits:
       exampleCreateItem: !include samples/create-body/node.json
       searchableDoc: (mapPoint=int;scheme=int)
       sortableDoc: (mapPoint,scheme)
+      expandableDoc: (node,node.calc,node.mapPoint,node.scheme,node.spec)
   /{node_id}:
     type:
         item-read-delete:
           exampleReadItem: !include samples/read-body/node.json
+          expandableDoc: (calc,mapPoint,scheme,spec)
     /calc:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/node-calc.json
           exampleUpdateItem: !include samples/update-body/node-calc.json
+          expandableDoc: ()
     /mapPoint:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/node-mapPoint.json
           exampleUpdateItem: !include samples/update-body/node-mapPoint.json
+          expandableDoc: (mapPoint)
     /scheme:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/node-scheme.json
           exampleUpdateItem: !include samples/update-body/node-scheme.json
+          expandableDoc: (scheme)
     /spec:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/node-spec.json
           exampleUpdateItem: !include samples/update-body/node-spec.json
+          expandableDoc: ()
 
 /sections:
   description: Section root resource
@@ -112,38 +127,45 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/sections.json
       exampleCreateItem: !include samples/create-body/section.json
-      searchableDoc: (nodeSrc=int;nodeDst=int;nodeTrc=int;scheme=int)
-      sortableDoc: (nodeSrc,nodeDst,nodeTrc,scheme)
+      searchableDoc: (nodes.src=int;nodes.dst=int;nodes.trc=int;scheme=int)
+      sortableDoc: (nodes.src,nodes.dst,nodes.trc,scheme)
+      expandableDoc: (section,section.calc,section.nodes,section.scheme,section.spec)
   /{section_id}:
     type:
         item-read-delete:
           exampleReadItem: !include samples/read-body/section.json
+          expandableDoc: (calc,nodes,scheme,spec)
     /calc:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/section-calc.json
           exampleUpdateItem: !include samples/update-body/section-calc.json
+          expandableDoc: ()
     /nodes:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/section-nodes.json
           exampleUpdateItem: !include samples/update-body/section-nodes.json
+          expandableDoc: (dst,src,trc)
     /paths:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/section-paths.json
-          searchableDoc: (mapPointSrc=int;mapPointDst=int)
-          sortableDoc: (mapPointSrc,mapPointDst)
+          searchableDoc: (mapPoint.src=int;mapPoint.dst=int)
+          sortableDoc: (mapPoint.src,mapPoint.dst)
+          expandableDoc: (path,path.mapPoint.dst,path.mapPoint.src)
     /scheme:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/section-scheme.json
           exampleUpdateItem: !include samples/update-body/section-scheme.json
+          expandableDoc: (scheme)
     /spec:
       type:
         item-read-update:
           exampleReadItem: !include samples/read-body/section-spec.json
           exampleUpdateItem: !include samples/update-body/section-spec.json
+          expandableDoc: ()
 
 /mapPoints:
   description: MapPoint root resource
@@ -151,13 +173,15 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/mapPoints.json
       exampleCreateItem: !include samples/create-body/mapPoint.json
-      searchableDoc: (gpsLat=double;gpsLon=double;gpsAlt=double;node=int;scheme=int;x=double;y=double)
-      sortableDoc: (gpsLat,gpsLon,gpsAlt,node,scheme,x,y)
+      searchableDoc: (gps.lat=double;gps.lon=double;gps.alt=double;node=int;scheme=int;x=double;y=double)
+      sortableDoc: (gps.lat,gps.lon,gps.alt,node,scheme,x,y)
+      expandableDoc: (mapPoint,mapPoint.node,mapPoint.scheme)
   /{mapPoint_id}:
     type:
         item-read-update-delete:
           exampleReadItem: !include samples/read-body/mapPoint.json
           exampleUpdateItem: !include samples/update-body/mapPoint.json
+          expandableDoc: (node,scheme)
 
 /paths:
   description: Path root resource
@@ -165,13 +189,15 @@ traits:
     collection-read-create:
       exampleCollection: !include samples/read-body/paths.json
       exampleCreateItem: !include samples/create-body/path.json
-      searchableDoc: (mapPointSrc=int;mapPointDst=int;section=int)
-      sortableDoc: (mapPointSrc,mapPointDst,section)
+      searchableDoc: (mapPoint.src=int;mapPoint.dst=int;section=int)
+      sortableDoc: (mapPoint.src,mapPoint.dst,section)
+      expandableDoc: (path,path.mapPoint.dst,path.mapPoint.src,path.section)
   /{path_id}:
     type:
         item-read-update-delete:
           exampleReadItem: !include samples/read-body/path.json
           exampleUpdateItem: !include samples/update-body/path.json
+          expandableDoc: (mapPoint.dst,mapPoint.src,section)
 /objects:
   description: Object root resource
   type:
@@ -180,17 +206,20 @@ traits:
       exampleCreateItem: !include samples/create-body/object.json
       searchableDoc: (name=string;scheme=int)
       sortableDoc: (name,scheme)
+      expandableDoc: (object,object.scheme)
   /{object_id}:
     type:
         item-read-update-delete:
           exampleReadItem: !include samples/read-body/object.json
           exampleUpdateItem: !include samples/update-body/object.json
+          expandableDoc: (scheme)
     /nodes:
       type:
         collection-read:
           exampleCollection: !include samples/read-body/object-nodes.json
           searchableDoc: (mapPoint=int)
           sortableDoc: (mapPoint)
+          expandableDoc: (node,node.calc,node.mapPoint,node.scheme,node.spec)
     /node/{node_id}:
       description: Create/delete relation between object_id and node_id
       type:
@@ -203,11 +232,13 @@ traits:
       exampleCollection: !include samples/read-body/notifications.json
       searchableDoc: (user=int;title=string;tsCreate=string-time;tsRead=string-time)
       sortableDoc: (user,title,tsCreate,tsRead)
+      expandableDoc: (notification,notification.user)
   /{notification_id}:
     type:
         item-read-update:
           exampleReadItem: !include samples/read-body/notification.json
           exampleUpdateItem: !include samples/update-body/notification.json
+          expandableDoc: (user)
 
 /permissions:
   description: Schema permissions root resource
