@@ -378,13 +378,54 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `cpdn-idp`.`contact`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`contact` (
+  `id` INT NOT NULL COMMENT '',
+  `first_name` VARCHAR(45) NULL COMMENT '',
+  `surname` VARCHAR(45) NULL COMMENT '',
+  `email` VARCHAR(255) NULL COMMENT '',
+  `phone` VARCHAR(20) NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '')
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-idp`.`role`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`role` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `name` VARCHAR(45) NOT NULL COMMENT '',
+  `title` VARCHAR(45) NOT NULL COMMENT '',
+  `active` INT(1) NOT NULL DEFAULT 1 COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '')
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `cpdn-idp`.`profile`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-idp`.`profile` (
   `id` INT NOT NULL COMMENT '',
+  `role_id` INT UNSIGNED NOT NULL COMMENT '',
+  `contact_id` INT NOT NULL COMMENT '',
   `nick` VARCHAR(20) NOT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
-  UNIQUE INDEX `nick_UNIQUE` (`nick` ASC)  COMMENT '')
+  UNIQUE INDEX `nick_UNIQUE` (`nick` ASC)  COMMENT '',
+  INDEX `fk_profile_contact1_idx` (`contact_id` ASC)  COMMENT '',
+  INDEX `fk_profile_role1_idx` (`role_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_profile_contact1`
+    FOREIGN KEY (`contact_id`)
+    REFERENCES `cpdn-idp`.`contact` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_profile_role1`
+    FOREIGN KEY (`role_id`)
+    REFERENCES `cpdn-idp`.`role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -422,10 +463,10 @@ USE `cpdn-oauth` ;
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`client` (
   `client_id` VARCHAR(80) NOT NULL COMMENT '',
   `client_secret` VARCHAR(80) NULL DEFAULT NULL COMMENT '',
+  `user_id` INT NULL COMMENT '',
   `redirect_uri` VARCHAR(2000) NULL COMMENT '',
   `grant_types` VARCHAR(80) NULL DEFAULT NULL COMMENT '',
   `scope` VARCHAR(2000) NULL DEFAULT NULL COMMENT '',
-  `user_id` INT NULL COMMENT '',
   PRIMARY KEY (`client_id`)  COMMENT '',
   INDEX `fk_client_profile1_idx` (`user_id` ASC)  COMMENT '',
   CONSTRAINT `fk_client_profile1`
@@ -550,10 +591,10 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`user` (
   `username` VARCHAR(255) NOT NULL COMMENT '',
   `password` VARCHAR(255) NOT NULL COMMENT '',
+  `user_id` INT NULL COMMENT '',
   `first_name` VARCHAR(255) NULL DEFAULT NULL COMMENT '',
   `last_name` VARCHAR(255) NULL DEFAULT NULL COMMENT '',
   `scope` VARCHAR(2000) NULL COMMENT '',
-  `user_id` INT NULL COMMENT '',
   PRIMARY KEY (`username`)  COMMENT '',
   INDEX `fk_user_profile1_idx` (`user_id` ASC)  COMMENT '',
   CONSTRAINT `fk_user_profile1`
@@ -564,14 +605,25 @@ CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`user` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+-- -----------------------------------------------------
+-- Table `cpdn-oauth`.`config`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-oauth`.`config` (
+  `key` VARCHAR(45) NOT NULL COMMENT '',
+  `value` TEXT NOT NULL COMMENT '',
+  PRIMARY KEY (`key`)  COMMENT '')
+ENGINE = InnoDB;
+
 USE `cpdn-idp` ;
 
 -- -----------------------------------------------------
--- Table `cpdn-idp`.`user`
+-- Table `cpdn-idp`.`account`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cpdn-idp`.`user` (
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`account` (
   `id` INT NOT NULL COMMENT '',
-  `email` VARCHAR(100) NOT NULL COMMENT '',
+  `profile_id` INT NULL COMMENT '',
+  `email` VARCHAR(255) NOT NULL COMMENT '',
   `password` VARCHAR(45) NOT NULL COMMENT '',
   `active` INT(1) NOT NULL DEFAULT 1 COMMENT '',
   `banned` INT(1) NOT NULL DEFAULT 0 COMMENT '',
@@ -579,7 +631,14 @@ CREATE TABLE IF NOT EXISTS `cpdn-idp`.`user` (
   `enforce_change_password` INT(1) NOT NULL DEFAULT 0 COMMENT '',
   `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
   `ts_update` DATETIME NULL COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '')
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_user_profile_idx` (`profile_id` ASC)  COMMENT '',
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC)  COMMENT '',
+  CONSTRAINT `fk_user_profile`
+    FOREIGN KEY (`profile_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -597,17 +656,96 @@ ENGINE = InnoDB;
 -- Table `cpdn-idp`.`membership`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-idp`.`membership` (
-  `membership` INT NOT NULL COMMENT '',
-  PRIMARY KEY (`membership`)  COMMENT '')
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `group_id` INT NOT NULL COMMENT '',
+  `profile_id` INT NOT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  `ts_from` DATETIME NULL COMMENT '',
+  `ts_to` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_membership_group1_idx` (`group_id` ASC)  COMMENT '',
+  INDEX `fk_membership_profile1_idx` (`profile_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_membership_group1`
+    FOREIGN KEY (`group_id`)
+    REFERENCES `cpdn-idp`.`group` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_membership_profile1`
+    FOREIGN KEY (`profile_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cpdn-idp`.`contact`
+-- Table `cpdn-idp`.`config`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cpdn-idp`.`contact` (
-  `id` INT NOT NULL COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '')
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`config` (
+  `key` VARCHAR(45) NOT NULL COMMENT '',
+  `value` TEXT NOT NULL COMMENT '',
+  PRIMARY KEY (`key`)  COMMENT '')
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-idp`.`access`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`access` (
+  `ip_address` VARCHAR(45) NOT NULL COMMENT '',
+  `type` ENUM('lgFail', 'lgSucc', 'pwChg') NOT NULL COMMENT '',
+  `account_id` INT NOT NULL COMMENT '',
+  `counter` INT NOT NULL DEFAULT 0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  `user_agent` VARCHAR(255) NULL COMMENT '',
+  PRIMARY KEY (`ip_address`, `type`, `account_id`)  COMMENT '',
+  INDEX `fk_access_account1_idx` (`account_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_access_account1`
+    FOREIGN KEY (`account_id`)
+    REFERENCES `cpdn-idp`.`account` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-idp`.`confirmation`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`confirmation` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `account_id` INT NOT NULL COMMENT '',
+  `type` ENUM('cnfEmail', 'rstPw') NOT NULL COMMENT '',
+  `token` VARCHAR(45) NOT NULL COMMENT '',
+  `confirmed` INT(1) NOT NULL DEFAULT 0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_confirmation_account1_idx` (`account_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_confirmation_account1`
+    FOREIGN KEY (`account_id`)
+    REFERENCES `cpdn-idp`.`account` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-idp`.`permission`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-idp`.`permission` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `role_id` INT UNSIGNED NOT NULL COMMENT '',
+  `resource` VARCHAR(45) NOT NULL COMMENT '',
+  `action` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_permission_role1_idx` (`role_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_permission_role1`
+    FOREIGN KEY (`role_id`)
+    REFERENCES `cpdn-idp`.`role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 USE `cpdn-editor` ;
@@ -628,6 +766,43 @@ CREATE TABLE IF NOT EXISTS `cpdn-editor`.`notification` (
   CONSTRAINT `fk_notification_profile`
     FOREIGN KEY (`profile_id`)
     REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-editor`.`config`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-editor`.`config` (
+  `key` VARCHAR(45) NOT NULL COMMENT '',
+  `value` TEXT NOT NULL COMMENT '',
+  PRIMARY KEY (`key`)  COMMENT '')
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-editor`.`online`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-editor`.`online` (
+  `id` INT NOT NULL COMMENT '',
+  `profile_id` INT NOT NULL COMMENT '',
+  `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
+  `ip_address` VARCHAR(45) NULL COMMENT '',
+  `user_agent` VARCHAR(255) NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_online_profile1_idx` (`profile_id` ASC)  COMMENT '',
+  INDEX `fk_online_scheme1_idx` (`scheme_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_online_profile1`
+    FOREIGN KEY (`profile_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_online_scheme1`
+    FOREIGN KEY (`scheme_id`)
+    REFERENCES `cpdn-network`.`scheme` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -682,6 +857,16 @@ CREATE TABLE IF NOT EXISTS `cpdn-background`.`task` (
     REFERENCES `cpdn-idp`.`profile` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-background`.`config`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-background`.`config` (
+  `key` VARCHAR(45) NOT NULL COMMENT '',
+  `value` TEXT NOT NULL COMMENT '',
+  PRIMARY KEY (`key`)  COMMENT '')
 ENGINE = InnoDB;
 
 
