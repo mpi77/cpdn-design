@@ -292,11 +292,25 @@ traits:
   type:
     collection-read:
       exampleCollection: !include samples/read-body/users.json
-      searchableDoc: (firstName=string;lastName=string,nick=string;email=string)
-      sortableDoc: (firstName,lastName,nick,email)
+      searchableDoc: (firstname=string;lastname=string,nick=string;email=string)
+      sortableDoc: (firstname,lastname,nick,email)
       expandableDoc: (user)
   /{user_id}:
     type:
       item-read:
         exampleReadItem: !include samples/read-body/user.json
+        expandableDoc: ()
+        
+/configs/editor:
+  description: Editor config root resource
+  type:
+    collection-read:
+      exampleCollection: !include samples/read-body/configs-editor.json
+      searchableDoc: ()
+      sortableDoc: ()
+      expandableDoc: (config.editor)
+  /{key}:
+    type:
+      item-read:
+        exampleReadItem: !include samples/read-body/config-editor.json
         expandableDoc: ()

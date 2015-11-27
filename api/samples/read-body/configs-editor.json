@@ -1,0 +1,22 @@
+{
+    "_meta": {
+        "href": "https:\/\/api.cpdn.sd2.cz\/v1\/configs\/editor\/",
+        "mediaType": "application\/json"
+    },
+    "items": [
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/configs\/editor\/string-key\/",
+                "mediaType": "application\/json",
+                "id": "string-key"
+            }
+        },
+        {
+            "_meta": {
+                "href": "https:\/\/api.cpdn.sd2.cz\/v1\/configs\/editor\/string-key\/",
+                "mediaType": "application\/json",
+                "id": "string-key"
+            }
+        }
+    ]
+}
