@@ -31,6 +31,22 @@ CREATE SCHEMA IF NOT EXISTS `cpdn-oauth` DEFAULT CHARACTER SET utf8 ;
 -- Schema cpdn-idp
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `cpdn-idp` ;
+-- -----------------------------------------------------
+-- Schema cpdn-editor
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema cpdn-editor
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `cpdn-editor` ;
+-- -----------------------------------------------------
+-- Schema cpdn-background
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema cpdn-background
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `cpdn-background` ;
 USE `cpdn-network` ;
 
 -- -----------------------------------------------------
@@ -50,6 +66,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`section_calc` (
   `power_dst_reactive` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `losses_active` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `losses_reactive` DOUBLE NULL DEFAULT 0.0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -84,6 +102,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`section_spec` (
   `current_noload` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `losses_noload` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `current_max` DOUBLE NULL DEFAULT 0.0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -96,6 +116,9 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`scheme` (
   `name` VARCHAR(45) NOT NULL COMMENT '',
   `description` VARCHAR(45) NULL COMMENT '',
   `version` INT NOT NULL DEFAULT 1 COMMENT '',
+  `lock` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -111,6 +134,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`node_calc` (
   `voltage_drop_proc` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `voltage_phase` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `voltage_value` DOUBLE NULL DEFAULT 0.0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -134,6 +159,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`node_spec` (
   `mi` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `lambda_min` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `lambda_max` DOUBLE NULL DEFAULT 0.0 COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
@@ -143,13 +170,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-network`.`map_point` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
+  `node_id` INT UNSIGNED NULL COMMENT '',
   `x` INT NOT NULL DEFAULT 0 COMMENT '',
   `y` INT NOT NULL DEFAULT 0 COMMENT '',
   `gps_latitude` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `gps_longitude` DOUBLE NULL DEFAULT 0.0 COMMENT '',
   `gps_altitude` DOUBLE NULL DEFAULT 0.0 COMMENT '',
-  `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
-  `node_id` INT UNSIGNED NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_map_point_scheme1_idx` (`scheme_id` ASC)  COMMENT '',
   INDEX `fk_map_point_node1_idx` (`node_id` ASC)  COMMENT '',
@@ -175,6 +204,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`node` (
   `node_spec_id` INT UNSIGNED NOT NULL COMMENT '',
   `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
   `map_point_id` INT UNSIGNED NOT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   INDEX `fk_node_node_calc1_idx` (`node_calc_id` ASC)  COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_node_node_spec1_idx` (`node_spec_id` ASC)  COMMENT '',
@@ -211,6 +242,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`section_node` (
   `node_src` INT UNSIGNED NOT NULL COMMENT '',
   `node_dst` INT UNSIGNED NOT NULL COMMENT '',
   `node_trc` INT UNSIGNED NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_section_node_node1_idx` (`node_src` ASC)  COMMENT '',
   INDEX `fk_section_node_node2_idx` (`node_dst` ASC)  COMMENT '',
@@ -242,6 +275,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`section` (
   `section_spec_id` INT NOT NULL COMMENT '',
   `section_node_id` INT UNSIGNED NOT NULL COMMENT '',
   `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_section_section_calc_idx` (`section_calc_id` ASC)  COMMENT '',
   INDEX `fk_section_section_spec1_idx` (`section_spec_id` ASC)  COMMENT '',
@@ -278,6 +313,8 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`path` (
   `src_map_point_id` INT UNSIGNED NOT NULL COMMENT '',
   `dst_map_point_id` INT UNSIGNED NOT NULL COMMENT '',
   `section_id` INT NOT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   INDEX `fk_path_map_point1_idx` (`src_map_point_id` ASC)  COMMENT '',
   INDEX `fk_path_map_point2_idx` (`dst_map_point_id` ASC)  COMMENT '',
   INDEX `fk_path_section1_idx` (`section_id` ASC)  COMMENT '',
@@ -305,8 +342,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-network`.`object` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
-  `name` VARCHAR(45) NOT NULL COMMENT '',
   `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
+  `name` VARCHAR(45) NOT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_object_scheme1_idx` (`scheme_id` ASC)  COMMENT '',
   CONSTRAINT `fk_object_scheme1`
@@ -350,14 +389,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cpdn-network`.`scheme_permissions`
+-- Table `cpdn-network`.`permission`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cpdn-network`.`scheme_permissions` (
+CREATE TABLE IF NOT EXISTS `cpdn-network`.`permission` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
-  `ts_from` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
-  `ts_to` DATETIME NULL COMMENT '',
   `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
   `profile_id` INT NOT NULL COMMENT '',
+  `ts_from` DATETIME NULL COMMENT '',
+  `ts_to` DATETIME NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '',
   INDEX `fk_schema_permissions_scheme1_idx` (`scheme_id` ASC)  COMMENT '',
   INDEX `fk_schema_permissions_profile1_idx` (`profile_id` ASC)  COMMENT '',
@@ -567,6 +608,80 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `cpdn-idp`.`contact` (
   `id` INT NOT NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
+ENGINE = InnoDB;
+
+USE `cpdn-editor` ;
+
+-- -----------------------------------------------------
+-- Table `cpdn-editor`.`notification`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-editor`.`notification` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `profile_id` INT NOT NULL COMMENT '',
+  `title` VARCHAR(255) NOT NULL COMMENT '',
+  `content` TEXT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  `ts_read` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_notification_profile_idx` (`profile_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_notification_profile`
+    FOREIGN KEY (`profile_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+USE `cpdn-background` ;
+
+-- -----------------------------------------------------
+-- Table `cpdn-background`.`executor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-background`.`executor` (
+  `id` VARCHAR(20) NOT NULL COMMENT '',
+  `title` VARCHAR(50) NOT NULL COMMENT '',
+  `status` ENUM('online', 'offline') NOT NULL DEFAULT 'offline' COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '')
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cpdn-background`.`task`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cpdn-background`.`task` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
+  `executor_id` VARCHAR(20) NOT NULL COMMENT '',
+  `scheme_id` INT UNSIGNED NOT NULL COMMENT '',
+  `profile_id` INT NOT NULL COMMENT '',
+  `status` ENUM('new', 'working', 'complete') NOT NULL DEFAULT 'new' COMMENT '',
+  `priority` INT NOT NULL DEFAULT 1 COMMENT '',
+  `command` TEXT NOT NULL COMMENT '',
+  `result` TEXT NULL COMMENT '',
+  `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '',
+  `ts_update` DATETIME NULL COMMENT '',
+  `ts_receive` DATETIME NULL COMMENT '',
+  `ts_execute` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '',
+  INDEX `fk_task_executor_idx` (`executor_id` ASC)  COMMENT '',
+  INDEX `fk_task_scheme1_idx` (`scheme_id` ASC)  COMMENT '',
+  INDEX `fk_task_profile1_idx` (`profile_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_task_executor`
+    FOREIGN KEY (`executor_id`)
+    REFERENCES `cpdn-background`.`executor` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_task_scheme1`
+    FOREIGN KEY (`scheme_id`)
+    REFERENCES `cpdn-network`.`scheme` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_task_profile1`
+    FOREIGN KEY (`profile_id`)
+    REFERENCES `cpdn-idp`.`profile` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
