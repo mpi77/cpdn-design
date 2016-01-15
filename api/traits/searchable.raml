@@ -5,10 +5,9 @@ queryParameters:
       The list of semicolon-separated properties used to filter the collection.
       Use it only if you want filter the collection for selected parameters.
       Some collections may have required parameters in filter query. These 
-      parameters are UPPERCASE in example doc. In real query use lowercase parameters.
+      parameters are with leading ! in example doc.
       General example: (color=blue;wheels=15; ...)
-      Required param in doc: (COLOR=blue)
-      Required param in real query: (color=blue)
+      Required param: (!color=blue)
     type: string
     required: false
     example: <<searchableDoc>>
