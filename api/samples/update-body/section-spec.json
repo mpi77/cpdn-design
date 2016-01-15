@@ -1,4 +1,5 @@
 {
+    "type": "line",
     "conductance": 0.1,
     "status": null,
     "susceptance": 0.1,
