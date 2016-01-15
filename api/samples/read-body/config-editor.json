@@ -4,5 +4,6 @@
         "mediaType": "application\/json",
         "id": "string-key"
     },
-    "value": "text value"
+    "key": "string key",
+    "value": "string value"
 }
