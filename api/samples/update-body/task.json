@@ -1,0 +1,9 @@
+{
+    "user": 7,
+    "executor": null,
+    "scheme": 44,
+    "status": "new",
+    "priority": 1,
+    "command": "{json:encoded:command:to:executor}",
+    "result": "{json:encoded:result:from:executor}"
+}
