@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `cpdn-network`.`section_spec` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `type` ENUM('line', 'transformer', 'transformerW3', 'reactor', 'switch') NOT NULL DEFAULT 'line',
   `status` ENUM('on', 'off') NULL DEFAULT 'off',
+  `label` VARCHAR(255) NULL,
   `resistance_value` DOUBLE NULL DEFAULT 0.0,
   `resistance_ratio` DOUBLE NULL DEFAULT 0.0,
   `reactance_value` DOUBLE NULL DEFAULT 0.0,
@@ -147,6 +148,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `cpdn-network`.`node_spec` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `type` ENUM('power', 'consumption', 'turbogen', 'hydrogen', 'superiorSystem') NOT NULL DEFAULT 'power',
+  `label` VARCHAR(255) NULL,
   `power_installed` DOUBLE NULL DEFAULT 0.0,
   `power_rated` DOUBLE NULL DEFAULT 0.0,
   `voltage_rated` DOUBLE NULL DEFAULT 0.0,
