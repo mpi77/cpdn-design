@@ -37,6 +37,7 @@
         "type": "line",
         "conductance": 0.1,
         "status": null,
+        "label": null,
         "susceptance": 0.1,
         "current": {
             "max": 0.1,

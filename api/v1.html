@@ -366,14 +366,15 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/schemes\/44\/",
         "mediaType": "application\/json",
         "id": 44,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "description": "some description of the scheme",
     "lock": false,
     "name": "some scheme name",
     "version": 1
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -1553,6 +1554,7 @@
     "scheme":44,
     "spec": {
         "type": "power",
+        "label": null,
         "cosFi": 0.1,
         "mi": 0.1,
         "lambda": {
@@ -1576,7 +1578,8 @@
             "value": 0.1
         }
     }
-}</code></pre></div><div class="tab-pane" id="nodes_post_response"><h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre></div><div class="tab-pane" id="nodes_post_response"><h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2001,
     "devMessage": null,
     "_meta": {
@@ -1661,8 +1664,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/",
         "mediaType": "application\/json",
         "id": 22,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "calc": {
         "_meta": {
@@ -1692,7 +1695,8 @@
             "id": 22
         }
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -1857,8 +1861,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/calc\/",
         "mediaType": "application\/json",
         "id": 22,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "load": {
         "active": 0.1,
@@ -1870,7 +1874,8 @@
         "phase": 0.1,
         "value": 0.1
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -2406,10 +2411,11 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/nodes\/22\/spec\/",
         "mediaType": "application\/json",
         "id": 22,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "type": "power",
+    "label": null,
     "cosFi": 0.1,
     "mi": 0.1,
     "lambda": {
@@ -2432,7 +2438,8 @@
         "rated": 0.1,
         "value": 0.1
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -2514,6 +2521,7 @@
     "usrMessage": "Service is unavailable."
 }</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="nodes__node_id__spec_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent">/nodes/{node_id}</span>/spec</h4></div><div class="modal-body"><div class="alert alert-info"><p>Update the collection item of spec</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by oauth_2_0<p>OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#nodes__node_id__spec_post_request" data-toggle="tab">Request</a></li><li><a href="#nodes__node_id__spec_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="nodes__node_id__spec_post_request"><h3>URI Parameters</h3><ul><li><strong>node_id</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "type": "power",
+    "label": null,
     "cosFi": 0.1,
     "mi": 0.1,
     "lambda": {
@@ -2536,7 +2544,8 @@
         "rated": 0.1,
         "value": 0.1
     }
-}</code></pre></div><div class="tab-pane" id="nodes__node_id__spec_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre></div><div class="tab-pane" id="nodes__node_id__spec_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2000,
     "devMessage": null,
     "_meta": {
@@ -2799,6 +2808,7 @@
         "type": "line",
         "conductance": 0.1,
         "status": null,
+        "label": null,
         "susceptance": 0.1,
         "current": {
             "max": 0.1,
@@ -2847,7 +2857,8 @@
             }
         }
     }
-}</code></pre></div><div class="tab-pane" id="sections_post_response"><h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre></div><div class="tab-pane" id="sections_post_response"><h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2001,
     "devMessage": null,
     "_meta": {
@@ -2932,8 +2943,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/",
         "mediaType": "application\/json",
         "id": 33,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "calc": {
         "_meta": {
@@ -2963,7 +2974,8 @@
             "id": 33
         }
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -3128,8 +3140,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/calc\/",
         "mediaType": "application\/json",
         "id": 33,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "current": {
         "dst": {
@@ -3157,7 +3169,8 @@
             "reactive": 0.1
         }
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -3357,8 +3370,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/nodes\/",
         "mediaType": "application\/json",
         "id": 33,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "dst": {
         "_meta": {
@@ -3375,7 +3388,8 @@
         }
     },
     "trc": null
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -3857,10 +3871,11 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/sections\/33\/spec\/",
         "mediaType": "application\/json",
         "id": 33,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "type": "line",
+    "label": null,
     "conductance": 0.1,
     "status": 1,
     "susceptance": 0.1,
@@ -3910,7 +3925,8 @@
             "bc": 0.1
         }
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -3992,6 +4008,7 @@
     "usrMessage": "Service is unavailable."
 }</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="sections__section_id__spec_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent">/sections/{section_id}</span>/spec</h4></div><div class="modal-body"><div class="alert alert-info"><p>Update the collection item of spec</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by oauth_2_0<p>OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#sections__section_id__spec_post_request" data-toggle="tab">Request</a></li><li><a href="#sections__section_id__spec_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sections__section_id__spec_post_request"><h3>URI Parameters</h3><ul><li><strong>section_id</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "type": "line",
+    "label": null,
     "conductance": 0.1,
     "status": null,
     "susceptance": 0.1,
@@ -4041,7 +4058,8 @@
             "bc": 0.1
         }
     }
-}</code></pre></div><div class="tab-pane" id="sections__section_id__spec_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre></div><div class="tab-pane" id="sections__section_id__spec_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2000,
     "devMessage": null,
     "_meta": {
@@ -4360,8 +4378,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/mapPoints\/11\/",
         "mediaType": "application\/json",
         "id": 11,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "gps": {
         "altitude": 0.1,
@@ -4384,7 +4402,8 @@
     },
     "x": 100,
     "y": 100
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -4869,8 +4888,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/paths\/55\/",
         "mediaType": "application\/json",
         "id": 55,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "mapPoint": {
         "dst": {
@@ -4895,7 +4914,8 @@
             "id": 33
         }
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -5366,8 +5386,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/objects\/99\/",
         "mediaType": "application\/json",
         "id": 99,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "name": "object name",
     "scheme": {
@@ -5377,7 +5397,8 @@
             "id": 44
         }
     }
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -6051,8 +6072,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/notifications\/109\/",
         "mediaType": "application\/json",
         "id": 109,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "title": "notification title",
     "content": "notification text content",
@@ -6062,7 +6083,8 @@
         "id": 7
     },
     "tsRead": null
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -6237,8 +6259,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/permissions\/77\/",
         "mediaType": "application\/json",
         "id": 77,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "user": {
         "_meta": {
@@ -6255,9 +6277,10 @@
         }
     },
     "mode": "rwx",
-    "tsFrom": "2015-01-01T00:00:00.000Z",
-    "tsTo": "2015-01-01T00:00:00.000Z"
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+    "tsFrom": "2015-01-01 00:00:00",
+    "tsTo": "2015-01-01 00:00:00"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -6428,8 +6451,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/permissions\/77\/",
         "mediaType": "application\/json",
         "id": 77,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "user": {
         "_meta": {
@@ -6446,9 +6469,10 @@
         }
     },
     "mode": "rwx",
-    "tsFrom": "2015-01-01T00:00:00.000Z",
-    "tsTo": "2015-01-01T00:00:00.000Z"
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+    "tsFrom": "2015-01-01 00:00:00",
+    "tsTo": "2015-01-01 00:00:00"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -6924,8 +6948,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/tasks\/88\/",
         "mediaType": "application\/json",
         "id": 88,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "user": {
         "_meta": {
@@ -6952,9 +6976,10 @@
     "priority": 1,
     "command": "{json:encoded:command:to:executor}",
     "result": "{json:encoded:result:from:executor}",
-    "tsReceived": "2015-01-01T00:00:00.000Z",
-    "tsExecuted": "2015-01-01T00:00:00.000Z"
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+    "tsReceived": "2015-01-01 00:00:00",
+    "tsExecuted": "2015-01-01 00:00:00"
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -7264,12 +7289,13 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/executor\/222\/",
         "mediaType": "application\/json",
         "id": 222,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "title": "task executor title",
     "status": "online"
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {
@@ -7483,8 +7509,8 @@
         "href": "https:\/\/api.cpdn.sd2.cz\/v1\/user\/7\/",
         "mediaType": "application\/json",
         "id": 7,
-        "tsCreate": "2015-01-01T00:00:00.000Z",
-        "tsUpdate": "2015-01-01T00:00:00.000Z"
+        "tsCreate": "2015-01-01 00:00:00",
+        "tsUpdate": "2015-01-01 00:00:00"
     },
     "contact": {
         "firstname": "John",
@@ -7493,7 +7519,8 @@
         "email": "js@example.com"
     },
     "nick": "js"
-}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+}
+</code></pre><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
     "code": 2004,
     "devMessage": null,
     "_meta": {

@@ -15,6 +15,7 @@
     "scheme":44,
     "spec": {
         "type": "power",
+        "label": null,
         "cosFi": 0.1,
         "mi": 0.1,
         "lambda": {
