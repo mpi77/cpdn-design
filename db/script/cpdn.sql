@@ -626,10 +626,10 @@ USE `cpdn-idp` ;
 -- Table `cpdn-idp`.`account`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-idp`.`account` (
-  `id` INT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `profile_id` INT UNSIGNED NOT NULL,
   `email` VARCHAR(255) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(75) NOT NULL,
   `active` INT(1) NOT NULL DEFAULT 1,
   `banned` INT(1) NOT NULL DEFAULT 0,
   `suspended` INT(1) NOT NULL DEFAULT 0,
@@ -651,7 +651,7 @@ ENGINE = InnoDB;
 -- Table `cpdn-idp`.`group`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-idp`.`group` (
-  `id` INT NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -662,7 +662,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cpdn-idp`.`membership` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `group_id` INT NOT NULL,
+  `group_id` INT UNSIGNED NOT NULL,
   `profile_id` INT UNSIGNED NOT NULL,
   `ts_create` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ts_update` DATETIME NULL,
